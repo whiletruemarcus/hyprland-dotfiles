@@ -1,0 +1,95 @@
+/* ~/.config/wofi/style.css */
+@import url("../../.cache/wal/colors.css");
+
+/* Base styling */
+window {
+    margin: 5px;
+    border-radius: 12px;
+    background-color: rgba(28,31,39, 0.9);
+    font-family: "SFMono Nerd Font Mono";
+}
+
+/* Search input styling */
+#input {
+    margin: 8px;
+    padding: 8px 12px;
+    border: 2px solid #ccb79f;
+    border-radius: 8px;
+    color: var(--foreground);
+    background-color: rgba(28,31,39, 0.7);
+    outline: none;
+    caret-color: #d2bdae;
+}
+
+#input:focus {
+    border-color: #d2bdae;
+}
+
+/* Container styling */
+#inner-box {
+    margin: 8px;
+    border: none;
+    background-color: transparent;
+    padding-top: 5px;
+}
+
+#outer-box {
+    margin: 0px;
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+    padding: 5px;
+}
+
+/* Text styling */
+#text {
+    margin: 3px;
+    border: none;
+    color: var(--foreground);
+    font-size: 13px;
+    padding: 3px;
+}
+
+#text:selected {
+    color: #d2bdae;
+    font-weight: bold;
+}
+
+/* Entry styling */
+#entry {
+    padding: 7px;
+    margin: 2px 5px;
+    border-radius: 8px;
+    transition: all 0.15s ease;
+}
+
+#entry:hover {
+    background-color: rgba(163,158,157, 0.15);
+}
+
+#entry:selected {
+    background-color: rgba(163,158,157, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Image/icon styling */
+#img {
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+/* Unselected and urgent styling */
+#unselected {
+    opacity: 0.9;
+}
+
+#urgent {
+    background-color: rgba(113,118,135, 0.2);
+    color: #717687;
+}

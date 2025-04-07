@@ -1,0 +1,898 @@
+16:30:51.303: Platform: Wayland
+16:30:51.303: CPU Name: Intel(R) Core(TM) i7-8550U CPU @ 1.80GHz
+16:30:51.303: CPU Speed: 3700.573MHz
+16:30:51.304: Physical Cores: 4, Logical Cores: 8
+16:30:51.304: Physical Memory: 15679MB Total, 13653MB Free
+16:30:51.304: Kernel Version: Linux 6.12.21-1-lts
+16:30:51.304: Distribution: "Arch Linux" Unknown
+16:30:51.304: Desktop Environment: Hyprland (Hyprland)
+16:30:51.304: Session Type: wayland
+16:30:51.306: Qt Version: 6.9.0 (runtime), 6.8.3 (compiled)
+16:30:51.306: Portable mode: false
+16:30:51.345: OBS 31.0.3 (linux)
+16:30:51.345: ---------------------------------
+16:30:51.346: ---------------------------------
+16:30:51.346: audio settings reset:
+16:30:51.346: 	samples per sec: 48000
+16:30:51.346: 	speakers:        2
+16:30:51.346: 	max buffering:   960 milliseconds
+16:30:51.346: 	buffering type:  dynamically increasing
+16:30:51.347: ---------------------------------
+16:30:51.347: Initializing OpenGL...
+16:30:51.347: Using EGL/Wayland
+16:30:51.389: Initialized EGL 1.5
+16:30:51.410: Loading up OpenGL on adapter Intel Mesa Intel(R) UHD Graphics 620 (KBL GT2)
+16:30:51.410: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 25.1.0-devel (git-8742927d8f), shading language 4.60
+16:30:51.580: ---------------------------------
+16:30:51.580: video settings reset:
+16:30:51.580: 	base resolution:   1920x1080
+16:30:51.580: 	output resolution: 1280x720
+16:30:51.580: 	downscale filter:  Bicubic
+16:30:51.580: 	fps:               30/1
+16:30:51.580: 	format:            NV12
+16:30:51.580: 	YUV mode:          Rec. 709/Partial
+16:30:51.580: NV12 texture support enabled
+16:30:51.580: P010 texture support not available
+16:30:51.587: Audio monitoring device:
+16:30:51.587: 	name: Default
+16:30:51.587: 	id: default
+16:30:51.587: ---------------------------------
+16:30:51.595: Failed to load 'en-US' text for module: 'decklink-captions.so'
+16:30:51.602: Failed to load 'en-US' text for module: 'decklink-output-ui.so'
+16:30:51.608: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+16:30:51.608: Failed to initialize module 'decklink.so'
+16:30:51.763: [pipewire] Available capture sources:
+16:30:51.763: [pipewire]     - Monitor source
+16:30:51.763: [pipewire]     - Window source
+16:30:51.782: v4l2loopback not installed, virtual camera not registered
+16:30:51.840: VAAPI: Failed to initialize display in vaapi_device_h264_supported
+16:30:52.768: VAAPI: API version 1.22
+16:30:52.769: FFmpeg VAAPI H264 encoding supported
+16:30:52.769: VAAPI: Failed to initialize display in vaapi_device_av1_supported
+16:30:52.775: FFmpeg VAAPI AV1 encoding not supported
+16:30:52.775: VAAPI: Failed to initialize display in vaapi_device_hevc_supported
+16:30:52.781: FFmpeg VAAPI HEVC encoding supported
+16:30:52.806: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): libnvidia-encode.so.1: cannot open shared object file: No such file or directory
+16:30:52.806: 
+16:30:52.806: NVENC not supported
+16:30:52.806: Failed to initialize module 'obs-nvenc.so'
+16:30:52.881: os_dlopen(/usr/lib/obs-plugins/obs-websocket.so->/usr/lib/obs-plugins/obs-websocket.so): libqrcodegencpp.so.1: cannot open shared object file: No such file or directory
+16:30:52.881: 
+16:30:52.884: os_dlopen(/usr/lib/obs-plugins/obs-websocket.so->/usr/lib/obs-plugins/obs-websocket.so): libqrcodegencpp.so.1: cannot open shared object file: No such file or directory
+16:30:52.884: 
+16:30:52.884: Module '/usr/lib/obs-plugins/obs-websocket.so' not loaded
+16:30:52.908: ---------------------------------
+16:30:52.908:   Loaded Modules:
+16:30:52.908:     text-freetype2.so
+16:30:52.908:     rtmp-services.so
+16:30:52.908:     obs-x264.so
+16:30:52.908:     obs-webrtc.so
+16:30:52.908:     obs-vst.so
+16:30:52.908:     obs-transitions.so
+16:30:52.908:     obs-qsv11.so
+16:30:52.908:     obs-outputs.so
+16:30:52.908:     obs-libfdk.so
+16:30:52.908:     obs-filters.so
+16:30:52.908:     obs-ffmpeg.so
+16:30:52.908:     linux-v4l2.so
+16:30:52.908:     linux-pulseaudio.so
+16:30:52.908:     linux-pipewire.so
+16:30:52.908:     linux-jack.so
+16:30:52.908:     linux-capture.so
+16:30:52.908:     linux-alsa.so
+16:30:52.908:     image-source.so
+16:30:52.908:     frontend-tools.so
+16:30:52.908:     decklink-output-ui.so
+16:30:52.908:     decklink-captions.so
+16:30:52.908: ---------------------------------
+16:30:52.908: ---------------------------------
+16:30:52.908: Available Encoders:
+16:30:52.908:   Video Encoders:
+16:30:52.908: 	- ffmpeg_svt_av1 (SVT-AV1)
+16:30:52.908: 	- ffmpeg_aom_av1 (AOM AV1)
+16:30:52.908: 	- ffmpeg_vaapi_tex (FFmpeg VAAPI H.264)
+16:30:52.908: 	- hevc_ffmpeg_vaapi_tex (FFmpeg VAAPI HEVC)
+16:30:52.908: 	- obs_x264 (x264)
+16:30:52.908:   Audio Encoders:
+16:30:52.908: 	- ffmpeg_aac (FFmpeg AAC)
+16:30:52.908: 	- ffmpeg_opus (FFmpeg Opus)
+16:30:52.908: 	- ffmpeg_pcm_s16le (FFmpeg PCM (16-bit))
+16:30:52.908: 	- ffmpeg_pcm_s24le (FFmpeg PCM (24-bit))
+16:30:52.908: 	- ffmpeg_pcm_f32le (FFmpeg PCM (32-bit float))
+16:30:52.908: 	- ffmpeg_alac (FFmpeg ALAC (24-bit))
+16:30:52.908: 	- ffmpeg_flac (FFmpeg FLAC (16-bit))
+16:30:52.908: 	- libfdk_aac (libfdk AAC)
+16:30:52.908: ==== Startup complete ===============================================
+16:30:52.913: No scene file found, creating default scene
+16:30:52.970: All scene data cleared
+16:30:52.970: ------------------------------------------------
+16:30:52.983: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.1) 15.0.0'
+16:30:52.983: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+16:30:52.983: pulse-input: Started recording from 'alsa_output.pci-0000_00_1f.3.analog-stereo.monitor' (default)
+16:30:52.983: pulse-input: Server name: 'PulseAudio (on PipeWire 1.4.1) 15.0.0'
+16:30:52.984: pulse-input: Audio format: s32le, 48000 Hz, 2 channels
+16:30:52.984: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo' (default)
+16:30:52.985: Switched to scene 'Scene'
+16:30:52.985: Created scene collection 'Untitled' (clean, Untitled.json)
+16:30:52.985: ------------------------------------------------
+16:30:53.607: adding 21 milliseconds of audio buffering, total audio buffering is now 21 milliseconds (source: Desktop Audio)
+16:30:53.607: 
+16:31:07.539: 
+16:31:07.539: ==== Auto-config wizard testing commencing ======
+
+16:31:07.554: Number of remaining views: 1
+16:31:07.554: ---------------------------------
+16:31:07.554: video settings reset:
+16:31:07.554: 	base resolution:   1920x1080
+16:31:07.554: 	output resolution: 1920x1080
+16:31:07.554: 	downscale filter:  Bicubic
+16:31:07.554: 	fps:               60/1
+16:31:07.554: 	format:            NV12
+16:31:07.554: 	YUV mode:          Rec. 709/Partial
+16:31:07.555: NV12 texture support enabled
+16:31:07.555: P010 texture support not available
+16:31:07.561: Output 'null': Tried to use obs_output_set_media on an encoded output
+16:31:07.561: ---------------------------------
+16:31:07.561: [x264 encoder: 'test_x264'] preset: veryfast
+16:31:07.561: [x264 encoder: 'test_x264'] profile: high
+16:31:07.572: [x264 encoder: 'test_x264'] settings:
+16:31:07.572: 	rate_control: CRF
+16:31:07.572: 	bitrate:      0
+16:31:07.572: 	buffer size:  0
+16:31:07.572: 	crf:          20
+16:31:07.572: 	fps_num:      60
+16:31:07.572: 	fps_den:      1
+16:31:07.572: 	width:        1920
+16:31:07.572: 	height:       1080
+16:31:07.572: 	keyint:       250
+16:31:07.572: 
+16:31:07.581: ---------------------------------
+16:31:07.583: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo, track: 1
+16:31:07.583: 
+16:31:12.585: Output 'null': stopping
+16:31:12.585: Output 'null': Total frames output: 252
+16:31:12.585: Output 'null': Total drawn frames: 300
+16:31:12.658: Video stopped, number of skipped frames due to encoding lag: 186/292 (63.7%)
+16:31:12.828: Number of remaining views: 1
+16:31:12.828: ---------------------------------
+16:31:12.828: video settings reset:
+16:31:12.828: 	base resolution:   1920x1080
+16:31:12.828: 	output resolution: 1920x1080
+16:31:12.828: 	downscale filter:  Bicubic
+16:31:12.828: 	fps:               30/1
+16:31:12.828: 	format:            NV12
+16:31:12.828: 	YUV mode:          Rec. 709/Partial
+16:31:12.829: NV12 texture support enabled
+16:31:12.829: P010 texture support not available
+16:31:12.833: Output 'null': Tried to use obs_output_set_media on an encoded output
+16:31:12.833: ---------------------------------
+16:31:12.833: [x264 encoder: 'test_x264'] preset: veryfast
+16:31:12.833: [x264 encoder: 'test_x264'] profile: high
+16:31:12.833: [x264 encoder: 'test_x264'] settings:
+16:31:12.833: 	rate_control: CRF
+16:31:12.833: 	bitrate:      0
+16:31:12.833: 	buffer size:  0
+16:31:12.833: 	crf:          20
+16:31:12.833: 	fps_num:      30
+16:31:12.833: 	fps_den:      1
+16:31:12.833: 	width:        1920
+16:31:12.833: 	height:       1080
+16:31:12.833: 	keyint:       250
+16:31:12.833: 
+16:31:12.844: ---------------------------------
+16:31:12.844: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo, track: 1
+16:31:12.844: 
+16:31:17.844: Output 'null': stopping
+16:31:17.844: Output 'null': Total frames output: 106
+16:31:17.844: Output 'null': Total drawn frames: 150
+16:31:17.909: Video stopped, number of skipped frames due to encoding lag: 57/143 (39.9%)
+16:31:18.200: Number of remaining views: 1
+16:31:18.200: ---------------------------------
+16:31:18.200: video settings reset:
+16:31:18.200: 	base resolution:   1920x1080
+16:31:18.200: 	output resolution: 1280x720
+16:31:18.200: 	downscale filter:  Bicubic
+16:31:18.200: 	fps:               60/1
+16:31:18.200: 	format:            NV12
+16:31:18.200: 	YUV mode:          Rec. 709/Partial
+16:31:18.200: NV12 texture support enabled
+16:31:18.200: P010 texture support not available
+16:31:18.207: Output 'null': Tried to use obs_output_set_media on an encoded output
+16:31:18.207: ---------------------------------
+16:31:18.207: [x264 encoder: 'test_x264'] preset: veryfast
+16:31:18.207: [x264 encoder: 'test_x264'] profile: high
+16:31:18.208: [x264 encoder: 'test_x264'] settings:
+16:31:18.208: 	rate_control: CRF
+16:31:18.208: 	bitrate:      0
+16:31:18.208: 	buffer size:  0
+16:31:18.208: 	crf:          20
+16:31:18.208: 	fps_num:      60
+16:31:18.208: 	fps_den:      1
+16:31:18.208: 	width:        1280
+16:31:18.208: 	height:       720
+16:31:18.208: 	keyint:       250
+16:31:18.208: 
+16:31:18.215: ---------------------------------
+16:31:18.215: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo, track: 1
+16:31:18.215: 
+16:31:23.216: Output 'null': stopping
+16:31:23.216: Output 'null': Total frames output: 260
+16:31:23.216: Output 'null': Total drawn frames: 299 (300 attempted)
+16:31:23.216: Output 'null': Number of lagged frames due to rendering lag/stalls: 1 (0.3%)
+16:31:23.270: Video stopped, number of skipped frames due to encoding lag: 124/292 (42.5%)
+16:31:23.425: Number of remaining views: 1
+16:31:23.425: ---------------------------------
+16:31:23.425: video settings reset:
+16:31:23.425: 	base resolution:   1920x1080
+16:31:23.425: 	output resolution: 1280x720
+16:31:23.425: 	downscale filter:  Bicubic
+16:31:23.425: 	fps:               30/1
+16:31:23.425: 	format:            NV12
+16:31:23.425: 	YUV mode:          Rec. 709/Partial
+16:31:23.425: NV12 texture support enabled
+16:31:23.425: P010 texture support not available
+16:31:23.435: Output 'null': Tried to use obs_output_set_media on an encoded output
+16:31:23.435: ---------------------------------
+16:31:23.435: [x264 encoder: 'test_x264'] preset: veryfast
+16:31:23.435: [x264 encoder: 'test_x264'] profile: high
+16:31:23.435: [x264 encoder: 'test_x264'] settings:
+16:31:23.435: 	rate_control: CRF
+16:31:23.435: 	bitrate:      0
+16:31:23.435: 	buffer size:  0
+16:31:23.435: 	crf:          20
+16:31:23.435: 	fps_num:      30
+16:31:23.435: 	fps_den:      1
+16:31:23.435: 	width:        1280
+16:31:23.435: 	height:       720
+16:31:23.435: 	keyint:       250
+16:31:23.435: 
+16:31:23.442: ---------------------------------
+16:31:23.442: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo, track: 1
+16:31:23.442: 
+16:31:28.443: Output 'null': stopping
+16:31:28.443: Output 'null': Total frames output: 123
+16:31:28.443: Output 'null': Total drawn frames: 150
+16:31:28.536: Number of remaining views: 1
+16:31:28.536: ---------------------------------
+16:31:28.536: video settings reset:
+16:31:28.536: 	base resolution:   1920x1080
+16:31:28.536: 	output resolution: 852x480
+16:31:28.536: 	downscale filter:  Bicubic
+16:31:28.536: 	fps:               60/1
+16:31:28.536: 	format:            NV12
+16:31:28.536: 	YUV mode:          Rec. 709/Partial
+16:31:28.536: NV12 texture support enabled
+16:31:28.536: P010 texture support not available
+16:31:28.542: Output 'null': Tried to use obs_output_set_media on an encoded output
+16:31:28.542: ---------------------------------
+16:31:28.542: [x264 encoder: 'test_x264'] preset: veryfast
+16:31:28.542: [x264 encoder: 'test_x264'] profile: high
+16:31:28.542: [x264 encoder: 'test_x264'] settings:
+16:31:28.542: 	rate_control: CRF
+16:31:28.542: 	bitrate:      0
+16:31:28.542: 	buffer size:  0
+16:31:28.542: 	crf:          20
+16:31:28.542: 	fps_num:      60
+16:31:28.542: 	fps_den:      1
+16:31:28.542: 	width:        852
+16:31:28.542: 	height:       480
+16:31:28.542: 	keyint:       250
+16:31:28.542: 
+16:31:28.544: ---------------------------------
+16:31:28.544: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo, track: 1
+16:31:28.544: 
+16:31:33.544: Output 'null': stopping
+16:31:33.544: Output 'null': Total frames output: 273
+16:31:33.544: Output 'null': Total drawn frames: 300
+16:31:33.575: Number of remaining views: 1
+16:31:33.575: ---------------------------------
+16:31:33.575: video settings reset:
+16:31:33.575: 	base resolution:   1920x1080
+16:31:33.575: 	output resolution: 852x480
+16:31:33.575: 	downscale filter:  Bicubic
+16:31:33.575: 	fps:               30/1
+16:31:33.575: 	format:            NV12
+16:31:33.575: 	YUV mode:          Rec. 709/Partial
+16:31:33.575: NV12 texture support enabled
+16:31:33.575: P010 texture support not available
+16:31:33.581: Output 'null': Tried to use obs_output_set_media on an encoded output
+16:31:33.581: ---------------------------------
+16:31:33.581: [x264 encoder: 'test_x264'] preset: veryfast
+16:31:33.581: [x264 encoder: 'test_x264'] profile: high
+16:31:33.581: [x264 encoder: 'test_x264'] settings:
+16:31:33.581: 	rate_control: CRF
+16:31:33.581: 	bitrate:      0
+16:31:33.581: 	buffer size:  0
+16:31:33.581: 	crf:          20
+16:31:33.581: 	fps_num:      30
+16:31:33.581: 	fps_den:      1
+16:31:33.581: 	width:        852
+16:31:33.581: 	height:       480
+16:31:33.581: 	keyint:       250
+16:31:33.581: 
+16:31:33.583: ---------------------------------
+16:31:33.583: [FFmpeg aac encoder: 'test_aac'] bitrate: 32, channels: 2, channel_layout: stereo, track: 1
+16:31:33.583: 
+16:31:38.583: Output 'null': stopping
+16:31:38.594: Output 'null': Total frames output: 123
+16:31:38.594: Output 'null': Total drawn frames: 150
+16:31:38.615: Number of remaining views: 1
+16:31:38.615: ---------------------------------
+16:31:38.615: video settings reset:
+16:31:38.615: 	base resolution:   1920x1080
+16:31:38.615: 	output resolution: 1280x720
+16:31:38.615: 	downscale filter:  Bicubic
+16:31:38.615: 	fps:               30/1
+16:31:38.615: 	format:            NV12
+16:31:38.615: 	YUV mode:          Rec. 709/Partial
+16:31:38.615: NV12 texture support enabled
+16:31:38.615: P010 texture support not available
+16:31:57.888: Number of remaining views: 1
+16:31:57.889: ---------------------------------
+16:31:57.889: video settings reset:
+16:31:57.889: 	base resolution:   1920x1080
+16:31:57.889: 	output resolution: 1280x720
+16:31:57.889: 	downscale filter:  Bicubic
+16:31:57.889: 	fps:               30/1
+16:31:57.889: 	format:            NV12
+16:31:57.889: 	YUV mode:          Rec. 709/Partial
+16:31:57.889: NV12 texture support enabled
+16:31:57.889: P010 texture support not available
+16:31:57.894: 
+16:31:57.894: ==== Auto-config wizard testing stopping ========
+
+16:32:39.327: Number of remaining views: 1
+16:32:39.327: ---------------------------------
+16:32:39.327: video settings reset:
+16:32:39.327: 	base resolution:   1920x1080
+16:32:39.327: 	output resolution: 1920x1080
+16:32:39.327: 	downscale filter:  Bicubic
+16:32:39.327: 	fps:               30/1
+16:32:39.327: 	format:            NV12
+16:32:39.327: 	YUV mode:          Rec. 709/Partial
+16:32:39.327: NV12 texture support enabled
+16:32:39.327: P010 texture support not available
+16:32:39.333: Settings changed (video)
+16:32:39.333: ------------------------------------------------
+16:32:56.780: virtual void QtWaylandClient::QWaylandTextInputv3::disableSurface(wl_surface*) Try to disable surface 0x57c53ac472c0 with focusing surface 0x57c53afc2100
+16:32:56.832: virtual void QtWaylandClient::QWaylandTextInputv3::disableSurface(wl_surface*) Try to disable surface 0x57c53ad88260 with focusing surface 0x57c53afc2100
+16:32:59.990: PipeWire initialized
+16:32:59.993: User added source 'Screen Capture (PipeWire)' (pipewire-screen-capture-source) to scene 'Scene'
+16:33:00.018: [pipewire] Screencast session created
+16:33:01.309: [pipewire] Asking for monitor and window
+16:33:01.313: [pipewire] source selected, setting up screencast
+16:33:01.323: [pipewire] Server version: 1.4.1
+16:33:01.323: [pipewire] Library version: 1.4.1
+16:33:01.323: [pipewire] Header version: 1.4.1
+16:33:01.323: [pipewire] Created stream 0x57c53c74c2c0
+16:33:01.324: [pipewire] Stream 0x57c53c74c2c0 state: "connecting" (error: none)
+16:33:01.324: [pipewire] Playing stream 0x57c53c74c2c0
+16:33:01.324: [pipewire] Stream 0x57c53c74c2c0 state: "paused" (error: none)
+16:33:01.345: [pipewire] Negotiated format:
+16:33:01.345: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+16:33:01.345: [pipewire]     Modifier: 0x0
+16:33:01.345: [pipewire]     Size: 1920x1080
+16:33:01.345: [pipewire]     Framerate: 0/1
+16:33:01.348: [pipewire] Negotiated format:
+16:33:01.348: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+16:33:01.348: [pipewire]     Modifier: 0x100000000000004
+16:33:01.348: [pipewire]     Size: 1920x1080
+16:33:01.348: [pipewire]     Framerate: 0/1
+16:33:01.356: [pipewire] Stream 0x57c53c74c2c0 state: "streaming" (error: none)
+16:33:01.374: Cannot create EGLImage: Arguments are inconsistent (for example, a valid context requires buffers not supplied by a valid surface).
+16:33:01.374: [pipewire] Renegotiating stream
+16:33:01.375: [pipewire] Stream 0x57c53c74c2c0 state: "paused" (error: none)
+16:33:01.375: [pipewire] Negotiated format:
+16:33:01.375: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+16:33:01.375: [pipewire]     Modifier: 0x100000000000004
+16:33:01.375: [pipewire]     Size: 1920x1080
+16:33:01.375: [pipewire]     Framerate: 0/1
+16:33:01.377: [pipewire] Negotiated format:
+16:33:01.377: [pipewire]     Format: 8 (Spa:Enum:VideoFormat:BGRx)
+16:33:01.377: [pipewire]     Modifier: 0x100000000000002
+16:33:01.377: [pipewire]     Size: 1920x1080
+16:33:01.377: [pipewire]     Framerate: 0/1
+16:33:01.385: [pipewire] Stream 0x57c53c74c2c0 state: "streaming" (error: none)
+16:34:51.446: ---------------------------------
+16:34:51.446: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:34:51.446: [x264 encoder: 'simple_video_recording'] profile: high
+16:34:51.446: [x264 encoder: 'simple_video_recording'] settings:
+16:34:51.446: 	rate_control: CRF
+16:34:51.446: 	bitrate:      0
+16:34:51.446: 	buffer size:  0
+16:34:51.446: 	crf:          23
+16:34:51.446: 	fps_num:      30
+16:34:51.446: 	fps_den:      1
+16:34:51.446: 	width:        1920
+16:34:51.446: 	height:       1080
+16:34:51.446: 	keyint:       250
+16:34:51.446: 
+16:34:51.465: libfdk_aac encoder created
+16:34:51.465: libfdk_aac bitrate: 192, channels: 2
+16:34:51.468: ==== Recording Start ===============================================
+16:34:51.468: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-34-51.mkv'...
+16:35:23.371: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-34-51.mkv' stopped
+16:35:23.372: Output 'simple_file_output': stopping
+16:35:23.372: Output 'simple_file_output': Total frames output: 930
+16:35:23.372: Output 'simple_file_output': Total drawn frames: 955 (957 attempted)
+16:35:23.372: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 2 (0.2%)
+16:35:23.372: ==== Recording Stop ================================================
+16:35:23.381: libfdk_aac encoder destroyed
+16:37:14.195: adding 21 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Mic/Aux)
+16:37:14.195: 
+16:38:53.396: ---------------------------------
+16:38:53.396: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:38:53.396: [x264 encoder: 'simple_video_recording'] profile: high
+16:38:53.396: [x264 encoder: 'simple_video_recording'] settings:
+16:38:53.396: 	rate_control: CRF
+16:38:53.396: 	bitrate:      0
+16:38:53.396: 	buffer size:  0
+16:38:53.396: 	crf:          23
+16:38:53.396: 	fps_num:      30
+16:38:53.396: 	fps_den:      1
+16:38:53.396: 	width:        1920
+16:38:53.396: 	height:       1080
+16:38:53.396: 	keyint:       250
+16:38:53.396: 
+16:38:53.404: libfdk_aac encoder created
+16:38:53.405: libfdk_aac bitrate: 192, channels: 2
+16:38:53.407: ==== Recording Start ===============================================
+16:38:53.407: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-38-53.mkv'...
+16:39:37.196: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-38-53.mkv' stopped
+16:39:37.196: Output 'simple_file_output': stopping
+16:39:37.196: Output 'simple_file_output': Total frames output: 1285
+16:39:37.196: Output 'simple_file_output': Total drawn frames: 1310 (1313 attempted)
+16:39:37.196: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 3 (0.2%)
+16:39:37.196: ==== Recording Stop ================================================
+16:39:37.202: libfdk_aac encoder destroyed
+16:39:42.649: virtual void QtWaylandClient::QWaylandTextInputv3::disableSurface(wl_surface*) Try to disable surface 0x57c53ad88260 with focusing surface 0x57c53ac472c0
+16:39:50.366: ---------------------------------
+16:39:50.366: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:39:50.366: [x264 encoder: 'simple_video_recording'] profile: high
+16:39:50.366: [x264 encoder: 'simple_video_recording'] settings:
+16:39:50.366: 	rate_control: CRF
+16:39:50.366: 	bitrate:      0
+16:39:50.366: 	buffer size:  0
+16:39:50.366: 	crf:          23
+16:39:50.366: 	fps_num:      30
+16:39:50.366: 	fps_den:      1
+16:39:50.366: 	width:        1920
+16:39:50.366: 	height:       1080
+16:39:50.366: 	keyint:       250
+16:39:50.366: 
+16:39:50.375: libfdk_aac encoder created
+16:39:50.375: libfdk_aac bitrate: 192, channels: 2
+16:39:50.376: ==== Recording Start ===============================================
+16:39:50.376: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-39-50.mkv'...
+16:40:07.361: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-39-50.mkv' stopped
+16:40:07.361: Output 'simple_file_output': stopping
+16:40:07.361: Output 'simple_file_output': Total frames output: 480
+16:40:07.361: Output 'simple_file_output': Total drawn frames: 509
+16:40:07.361: ==== Recording Stop ================================================
+16:40:07.372: libfdk_aac encoder destroyed
+16:40:10.139: ---------------------------------
+16:40:10.139: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:40:10.139: [x264 encoder: 'simple_video_recording'] profile: high
+16:40:10.139: [x264 encoder: 'simple_video_recording'] settings:
+16:40:10.139: 	rate_control: CRF
+16:40:10.139: 	bitrate:      0
+16:40:10.139: 	buffer size:  0
+16:40:10.139: 	crf:          23
+16:40:10.139: 	fps_num:      30
+16:40:10.139: 	fps_den:      1
+16:40:10.139: 	width:        1920
+16:40:10.139: 	height:       1080
+16:40:10.139: 	keyint:       250
+16:40:10.139: 
+16:40:10.146: libfdk_aac encoder created
+16:40:10.146: libfdk_aac bitrate: 192, channels: 2
+16:40:10.148: ==== Recording Start ===============================================
+16:40:10.148: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-40-10.mkv'...
+16:40:42.306: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-40-10.mkv' stopped
+16:40:42.306: Output 'simple_file_output': stopping
+16:40:42.306: Output 'simple_file_output': Total frames output: 938
+16:40:42.306: Output 'simple_file_output': Total drawn frames: 965
+16:40:42.306: ==== Recording Stop ================================================
+16:40:42.316: libfdk_aac encoder destroyed
+16:40:59.853: ---------------------------------
+16:40:59.853: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:40:59.853: [x264 encoder: 'simple_video_recording'] profile: high
+16:40:59.853: [x264 encoder: 'simple_video_recording'] settings:
+16:40:59.853: 	rate_control: CRF
+16:40:59.853: 	bitrate:      0
+16:40:59.853: 	buffer size:  0
+16:40:59.853: 	crf:          23
+16:40:59.853: 	fps_num:      30
+16:40:59.853: 	fps_den:      1
+16:40:59.853: 	width:        1920
+16:40:59.853: 	height:       1080
+16:40:59.853: 	keyint:       250
+16:40:59.853: 
+16:40:59.860: libfdk_aac encoder created
+16:40:59.860: libfdk_aac bitrate: 192, channels: 2
+16:40:59.862: ==== Recording Start ===============================================
+16:40:59.862: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-40-59.mkv'...
+16:42:10.176: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-40-59.mkv' stopped
+16:42:10.176: Output 'simple_file_output': stopping
+16:42:10.176: Output 'simple_file_output': Total frames output: 2075
+16:42:10.176: Output 'simple_file_output': Total drawn frames: 2100 (2110 attempted)
+16:42:10.176: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 10 (0.5%)
+16:42:10.176: Video stopped, number of skipped frames due to encoding lag: 14/2109 (0.7%)
+16:42:10.176: ==== Recording Stop ================================================
+16:42:10.189: libfdk_aac encoder destroyed
+16:45:07.793: ---------------------------------
+16:45:07.793: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:45:07.793: [x264 encoder: 'simple_video_recording'] profile: high
+16:45:07.793: [x264 encoder: 'simple_video_recording'] settings:
+16:45:07.793: 	rate_control: CRF
+16:45:07.793: 	bitrate:      0
+16:45:07.793: 	buffer size:  0
+16:45:07.793: 	crf:          23
+16:45:07.793: 	fps_num:      30
+16:45:07.793: 	fps_den:      1
+16:45:07.793: 	width:        1920
+16:45:07.793: 	height:       1080
+16:45:07.793: 	keyint:       250
+16:45:07.793: 
+16:45:07.803: libfdk_aac encoder created
+16:45:07.803: libfdk_aac bitrate: 192, channels: 2
+16:45:07.805: ==== Recording Start ===============================================
+16:45:07.805: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-45-07.mkv'...
+16:45:53.366: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-45-07.mkv' stopped
+16:45:53.366: Output 'simple_file_output': stopping
+16:45:53.366: Output 'simple_file_output': Total frames output: 1338
+16:45:53.366: Output 'simple_file_output': Total drawn frames: 1365 (1366 attempted)
+16:45:53.366: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 1 (0.1%)
+16:45:53.366: ==== Recording Stop ================================================
+16:45:53.372: libfdk_aac encoder destroyed
+16:45:58.543: ---------------------------------
+16:45:58.543: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:45:58.543: [x264 encoder: 'simple_video_recording'] profile: high
+16:45:58.543: [x264 encoder: 'simple_video_recording'] settings:
+16:45:58.543: 	rate_control: CRF
+16:45:58.543: 	bitrate:      0
+16:45:58.543: 	buffer size:  0
+16:45:58.543: 	crf:          23
+16:45:58.543: 	fps_num:      30
+16:45:58.543: 	fps_den:      1
+16:45:58.543: 	width:        1920
+16:45:58.543: 	height:       1080
+16:45:58.543: 	keyint:       250
+16:45:58.543: 
+16:45:58.550: libfdk_aac encoder created
+16:45:58.550: libfdk_aac bitrate: 192, channels: 2
+16:45:58.552: ==== Recording Start ===============================================
+16:45:58.552: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-45-58.mkv'...
+16:46:49.139: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-45-58.mkv' stopped
+16:46:49.146: Output 'simple_file_output': stopping
+16:46:49.146: Output 'simple_file_output': Total frames output: 1486
+16:46:49.146: Output 'simple_file_output': Total drawn frames: 1512 (1518 attempted)
+16:46:49.146: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 6 (0.4%)
+16:46:49.146: Video stopped, number of skipped frames due to encoding lag: 4/1517 (0.3%)
+16:46:49.146: ==== Recording Stop ================================================
+16:46:49.151: libfdk_aac encoder destroyed
+16:47:04.000: ---------------------------------
+16:47:04.000: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:47:04.000: [x264 encoder: 'simple_video_recording'] profile: high
+16:47:04.000: [x264 encoder: 'simple_video_recording'] settings:
+16:47:04.000: 	rate_control: CRF
+16:47:04.000: 	bitrate:      0
+16:47:04.000: 	buffer size:  0
+16:47:04.000: 	crf:          23
+16:47:04.000: 	fps_num:      30
+16:47:04.000: 	fps_den:      1
+16:47:04.000: 	width:        1920
+16:47:04.000: 	height:       1080
+16:47:04.000: 	keyint:       250
+16:47:04.000: 
+16:47:04.009: libfdk_aac encoder created
+16:47:04.009: libfdk_aac bitrate: 192, channels: 2
+16:47:04.010: ==== Recording Start ===============================================
+16:47:04.010: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-47-03.mkv'...
+16:48:55.339: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-47-03.mkv' stopped
+16:48:55.339: Output 'simple_file_output': stopping
+16:48:55.339: Output 'simple_file_output': Total frames output: 3309
+16:48:55.339: Output 'simple_file_output': Total drawn frames: 3335 (3340 attempted)
+16:48:55.339: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 5 (0.1%)
+16:48:55.339: Video stopped, number of skipped frames due to encoding lag: 2/3339 (0.1%)
+16:48:55.339: ==== Recording Stop ================================================
+16:48:55.350: libfdk_aac encoder destroyed
+16:49:00.782: ---------------------------------
+16:49:00.782: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:49:00.782: [x264 encoder: 'simple_video_recording'] profile: high
+16:49:00.782: [x264 encoder: 'simple_video_recording'] settings:
+16:49:00.782: 	rate_control: CRF
+16:49:00.782: 	bitrate:      0
+16:49:00.782: 	buffer size:  0
+16:49:00.782: 	crf:          23
+16:49:00.782: 	fps_num:      30
+16:49:00.782: 	fps_den:      1
+16:49:00.782: 	width:        1920
+16:49:00.782: 	height:       1080
+16:49:00.782: 	keyint:       250
+16:49:00.782: 
+16:49:00.788: libfdk_aac encoder created
+16:49:00.788: libfdk_aac bitrate: 192, channels: 2
+16:49:00.790: ==== Recording Start ===============================================
+16:49:00.790: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-49-00.mkv'...
+16:49:48.841: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-49-00.mkv' stopped
+16:49:48.841: Output 'simple_file_output': stopping
+16:49:48.841: Output 'simple_file_output': Total frames output: 1414
+16:49:48.841: Output 'simple_file_output': Total drawn frames: 1438 (1442 attempted)
+16:49:48.841: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 4 (0.3%)
+16:49:48.842: ==== Recording Stop ================================================
+16:49:48.854: libfdk_aac encoder destroyed
+16:51:29.191: ---------------------------------
+16:51:29.191: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:51:29.191: [x264 encoder: 'simple_video_recording'] profile: high
+16:51:29.191: [x264 encoder: 'simple_video_recording'] settings:
+16:51:29.191: 	rate_control: CRF
+16:51:29.191: 	bitrate:      0
+16:51:29.191: 	buffer size:  0
+16:51:29.191: 	crf:          23
+16:51:29.191: 	fps_num:      30
+16:51:29.191: 	fps_den:      1
+16:51:29.191: 	width:        1920
+16:51:29.191: 	height:       1080
+16:51:29.191: 	keyint:       250
+16:51:29.191: 
+16:51:29.198: libfdk_aac encoder created
+16:51:29.198: libfdk_aac bitrate: 192, channels: 2
+16:51:29.200: ==== Recording Start ===============================================
+16:51:29.200: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-51-29.mkv'...
+16:52:05.590: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-51-29.mkv' stopped
+16:52:05.590: Output 'simple_file_output': stopping
+16:52:05.590: Output 'simple_file_output': Total frames output: 1066
+16:52:05.590: Output 'simple_file_output': Total drawn frames: 1091
+16:52:05.591: ==== Recording Stop ================================================
+16:52:05.599: libfdk_aac encoder destroyed
+16:52:12.690: ---------------------------------
+16:52:12.690: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:52:12.690: [x264 encoder: 'simple_video_recording'] profile: high
+16:52:12.690: [x264 encoder: 'simple_video_recording'] settings:
+16:52:12.690: 	rate_control: CRF
+16:52:12.690: 	bitrate:      0
+16:52:12.690: 	buffer size:  0
+16:52:12.690: 	crf:          23
+16:52:12.690: 	fps_num:      30
+16:52:12.690: 	fps_den:      1
+16:52:12.690: 	width:        1920
+16:52:12.690: 	height:       1080
+16:52:12.690: 	keyint:       250
+16:52:12.690: 
+16:52:12.700: libfdk_aac encoder created
+16:52:12.700: libfdk_aac bitrate: 192, channels: 2
+16:52:12.703: ==== Recording Start ===============================================
+16:52:12.703: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-52-12.mkv'...
+16:53:11.906: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-52-12.mkv' stopped
+16:53:11.906: Output 'simple_file_output': stopping
+16:53:11.906: Output 'simple_file_output': Total frames output: 1749
+16:53:11.906: Output 'simple_file_output': Total drawn frames: 1776
+16:53:11.906: ==== Recording Stop ================================================
+16:53:11.915: libfdk_aac encoder destroyed
+16:53:14.914: ---------------------------------
+16:53:14.914: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:53:14.914: [x264 encoder: 'simple_video_recording'] profile: high
+16:53:14.914: [x264 encoder: 'simple_video_recording'] settings:
+16:53:14.914: 	rate_control: CRF
+16:53:14.914: 	bitrate:      0
+16:53:14.914: 	buffer size:  0
+16:53:14.914: 	crf:          23
+16:53:14.914: 	fps_num:      30
+16:53:14.914: 	fps_den:      1
+16:53:14.914: 	width:        1920
+16:53:14.914: 	height:       1080
+16:53:14.914: 	keyint:       250
+16:53:14.914: 
+16:53:14.921: libfdk_aac encoder created
+16:53:14.921: libfdk_aac bitrate: 192, channels: 2
+16:53:14.922: ==== Recording Start ===============================================
+16:53:14.922: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-53-14.mkv'...
+16:53:21.805: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-53-14.mkv' stopped
+16:53:21.805: Output 'simple_file_output': stopping
+16:53:21.805: Output 'simple_file_output': Total frames output: 180
+16:53:21.805: Output 'simple_file_output': Total drawn frames: 207
+16:53:21.805: ==== Recording Stop ================================================
+16:53:21.817: libfdk_aac encoder destroyed
+16:53:23.588: ---------------------------------
+16:53:23.588: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:53:23.588: [x264 encoder: 'simple_video_recording'] profile: high
+16:53:23.588: [x264 encoder: 'simple_video_recording'] settings:
+16:53:23.588: 	rate_control: CRF
+16:53:23.588: 	bitrate:      0
+16:53:23.588: 	buffer size:  0
+16:53:23.588: 	crf:          23
+16:53:23.588: 	fps_num:      30
+16:53:23.588: 	fps_den:      1
+16:53:23.588: 	width:        1920
+16:53:23.588: 	height:       1080
+16:53:23.588: 	keyint:       250
+16:53:23.588: 
+16:53:23.595: libfdk_aac encoder created
+16:53:23.595: libfdk_aac bitrate: 192, channels: 2
+16:53:23.597: ==== Recording Start ===============================================
+16:53:23.597: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-53-23.mkv'...
+16:54:18.155: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-53-23.mkv' stopped
+16:54:18.155: Output 'simple_file_output': stopping
+16:54:18.155: Output 'simple_file_output': Total frames output: 1609
+16:54:18.155: Output 'simple_file_output': Total drawn frames: 1633 (1637 attempted)
+16:54:18.155: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 4 (0.2%)
+16:54:18.155: ==== Recording Stop ================================================
+16:54:18.160: libfdk_aac encoder destroyed
+16:56:03.155: ---------------------------------
+16:56:03.155: [x264 encoder: 'simple_video_recording'] preset: veryfast
+16:56:03.155: [x264 encoder: 'simple_video_recording'] profile: high
+16:56:03.155: [x264 encoder: 'simple_video_recording'] settings:
+16:56:03.155: 	rate_control: CRF
+16:56:03.155: 	bitrate:      0
+16:56:03.155: 	buffer size:  0
+16:56:03.155: 	crf:          23
+16:56:03.155: 	fps_num:      30
+16:56:03.155: 	fps_den:      1
+16:56:03.155: 	width:        1920
+16:56:03.155: 	height:       1080
+16:56:03.155: 	keyint:       250
+16:56:03.155: 
+16:56:03.162: libfdk_aac encoder created
+16:56:03.162: libfdk_aac bitrate: 192, channels: 2
+16:56:03.163: ==== Recording Start ===============================================
+16:56:03.163: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 16-56-03.mkv'...
+16:56:44.740: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 16-56-03.mkv' stopped
+16:56:44.740: Output 'simple_file_output': stopping
+16:56:44.740: Output 'simple_file_output': Total frames output: 1219
+16:56:44.740: Output 'simple_file_output': Total drawn frames: 1242 (1248 attempted)
+16:56:44.740: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 6 (0.5%)
+16:56:44.740: ==== Recording Stop ================================================
+16:56:44.751: libfdk_aac encoder destroyed
+17:00:08.939: ---------------------------------
+17:00:08.939: [x264 encoder: 'simple_video_recording'] preset: veryfast
+17:00:08.939: [x264 encoder: 'simple_video_recording'] profile: high
+17:00:08.939: [x264 encoder: 'simple_video_recording'] settings:
+17:00:08.939: 	rate_control: CRF
+17:00:08.939: 	bitrate:      0
+17:00:08.939: 	buffer size:  0
+17:00:08.939: 	crf:          23
+17:00:08.939: 	fps_num:      30
+17:00:08.939: 	fps_den:      1
+17:00:08.939: 	width:        1920
+17:00:08.939: 	height:       1080
+17:00:08.939: 	keyint:       250
+17:00:08.939: 
+17:00:08.947: libfdk_aac encoder created
+17:00:08.947: libfdk_aac bitrate: 192, channels: 2
+17:00:08.949: ==== Recording Start ===============================================
+17:00:08.949: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 17-00-08.mkv'...
+17:00:50.641: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 17-00-08.mkv' stopped
+17:00:50.641: Output 'simple_file_output': stopping
+17:00:50.641: Output 'simple_file_output': Total frames output: 1223
+17:00:50.641: Output 'simple_file_output': Total drawn frames: 1249 (1251 attempted)
+17:00:50.641: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 2 (0.2%)
+17:00:50.641: ==== Recording Stop ================================================
+17:00:50.651: libfdk_aac encoder destroyed
+17:10:28.697: ---------------------------------
+17:10:28.697: [x264 encoder: 'simple_video_recording'] preset: veryfast
+17:10:28.697: [x264 encoder: 'simple_video_recording'] profile: high
+17:10:28.697: [x264 encoder: 'simple_video_recording'] settings:
+17:10:28.697: 	rate_control: CRF
+17:10:28.697: 	bitrate:      0
+17:10:28.697: 	buffer size:  0
+17:10:28.697: 	crf:          23
+17:10:28.697: 	fps_num:      30
+17:10:28.697: 	fps_den:      1
+17:10:28.697: 	width:        1920
+17:10:28.697: 	height:       1080
+17:10:28.697: 	keyint:       250
+17:10:28.697: 
+17:10:28.706: libfdk_aac encoder created
+17:10:28.706: libfdk_aac bitrate: 192, channels: 2
+17:10:28.708: ==== Recording Start ===============================================
+17:10:28.708: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 17-10-28.mkv'...
+17:11:11.375: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 17-10-28.mkv' stopped
+17:11:11.375: Output 'simple_file_output': stopping
+17:11:11.375: Output 'simple_file_output': Total frames output: 1251
+17:11:11.375: Output 'simple_file_output': Total drawn frames: 1276 (1280 attempted)
+17:11:11.375: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 4 (0.3%)
+17:11:11.375: ==== Recording Stop ================================================
+17:11:11.391: libfdk_aac encoder destroyed
+17:14:26.241: Settings changed (outputs)
+17:14:26.241: ------------------------------------------------
+17:14:31.717: ---------------------------------
+17:14:31.717: [x264 encoder: 'simple_video_recording'] preset: ultrafast
+17:14:31.717: [x264 encoder: 'simple_video_recording'] profile: high
+17:14:31.717: [x264 encoder: 'simple_video_recording'] settings:
+17:14:31.717: 	rate_control: CRF
+17:14:31.717: 	bitrate:      0
+17:14:31.717: 	buffer size:  0
+17:14:31.717: 	crf:          14
+17:14:31.717: 	fps_num:      30
+17:14:31.717: 	fps_den:      1
+17:14:31.717: 	width:        1920
+17:14:31.717: 	height:       1080
+17:14:31.717: 	keyint:       250
+17:14:31.717: 
+17:14:31.726: libfdk_aac encoder created
+17:14:31.726: libfdk_aac bitrate: 192, channels: 2
+17:14:31.727: ==== Recording Start ===============================================
+17:14:31.727: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 17-14-31.mp4'...
+17:14:33.004: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 17-14-31.mp4' stopped
+17:14:33.004: Output 'simple_file_output': stopping
+17:14:33.004: Output 'simple_file_output': Total frames output: 25
+17:14:33.004: Output 'simple_file_output': Total drawn frames: 39
+17:14:33.004: ==== Recording Stop ================================================
+17:14:33.013: libfdk_aac encoder destroyed
+17:14:45.434: ---------------------------------
+17:14:45.434: [x264 encoder: 'simple_video_recording'] preset: ultrafast
+17:14:45.434: [x264 encoder: 'simple_video_recording'] profile: high
+17:14:45.434: [x264 encoder: 'simple_video_recording'] settings:
+17:14:45.434: 	rate_control: CRF
+17:14:45.434: 	bitrate:      0
+17:14:45.434: 	buffer size:  0
+17:14:45.434: 	crf:          14
+17:14:45.434: 	fps_num:      30
+17:14:45.434: 	fps_den:      1
+17:14:45.434: 	width:        1920
+17:14:45.434: 	height:       1080
+17:14:45.434: 	keyint:       250
+17:14:45.434: 
+17:14:45.443: libfdk_aac encoder created
+17:14:45.443: libfdk_aac bitrate: 192, channels: 2
+17:14:45.445: ==== Recording Start ===============================================
+17:14:45.445: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 17-14-45.mp4'...
+17:15:06.858: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 17-14-45.mp4' stopped
+17:15:06.858: Output 'simple_file_output': stopping
+17:15:06.858: Output 'simple_file_output': Total frames output: 628
+17:15:06.858: Output 'simple_file_output': Total drawn frames: 642
+17:15:06.858: ==== Recording Stop ================================================
+17:15:06.862: libfdk_aac encoder destroyed
+17:15:10.463: ---------------------------------
+17:15:10.463: [x264 encoder: 'simple_video_recording'] preset: ultrafast
+17:15:10.463: [x264 encoder: 'simple_video_recording'] profile: high
+17:15:10.463: [x264 encoder: 'simple_video_recording'] settings:
+17:15:10.463: 	rate_control: CRF
+17:15:10.463: 	bitrate:      0
+17:15:10.463: 	buffer size:  0
+17:15:10.463: 	crf:          14
+17:15:10.463: 	fps_num:      30
+17:15:10.463: 	fps_den:      1
+17:15:10.463: 	width:        1920
+17:15:10.463: 	height:       1080
+17:15:10.463: 	keyint:       250
+17:15:10.463: 
+17:15:10.472: libfdk_aac encoder created
+17:15:10.472: libfdk_aac bitrate: 192, channels: 2
+17:15:10.474: ==== Recording Start ===============================================
+17:15:10.474: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 17-15-10.mp4'...
+17:15:43.595: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 17-15-10.mp4' stopped
+17:15:43.595: Output 'simple_file_output': stopping
+17:15:43.595: Output 'simple_file_output': Total frames output: 978
+17:15:43.595: Output 'simple_file_output': Total drawn frames: 989 (993 attempted)
+17:15:43.595: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 4 (0.4%)
+17:15:43.595: ==== Recording Stop ================================================
+17:15:43.599: libfdk_aac encoder destroyed
+17:16:57.405: adding 64 milliseconds of audio buffering, total audio buffering is now 106 milliseconds (source: Desktop Audio)
+17:16:57.405: 
+17:20:16.654: ---------------------------------
+17:20:16.654: [x264 encoder: 'simple_video_recording'] preset: ultrafast
+17:20:16.654: [x264 encoder: 'simple_video_recording'] profile: high
+17:20:16.654: [x264 encoder: 'simple_video_recording'] settings:
+17:20:16.654: 	rate_control: CRF
+17:20:16.654: 	bitrate:      0
+17:20:16.654: 	buffer size:  0
+17:20:16.654: 	crf:          14
+17:20:16.654: 	fps_num:      30
+17:20:16.654: 	fps_den:      1
+17:20:16.654: 	width:        1920
+17:20:16.654: 	height:       1080
+17:20:16.654: 	keyint:       250
+17:20:16.654: 
+17:20:16.661: libfdk_aac encoder created
+17:20:16.661: libfdk_aac bitrate: 192, channels: 2
+17:20:16.663: ==== Recording Start ===============================================
+17:20:16.663: [ffmpeg muxer: 'simple_file_output'] Writing file '/home/saatvik333/2025-04-07 17-20-16.mp4'...
+17:21:01.867: [ffmpeg muxer: 'simple_file_output'] Output of file '/home/saatvik333/2025-04-07 17-20-16.mp4' stopped
+17:21:01.867: Output 'simple_file_output': stopping
+17:21:01.867: Output 'simple_file_output': Total frames output: 1341
+17:21:01.867: Output 'simple_file_output': Total drawn frames: 1353 (1357 attempted)
+17:21:01.867: Output 'simple_file_output': Number of lagged frames due to rendering lag/stalls: 4 (0.3%)
+17:21:01.867: ==== Recording Stop ================================================
+17:21:01.871: libfdk_aac encoder destroyed
