@@ -5,18 +5,18 @@
 mkdir -p ~/.config/wofi
 
 # Extract all colors from pywal
-BACKGROUND=$(grep -o -- "--background: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-FOREGROUND=$(grep -o -- "--foreground: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-COLOR0=$(grep -o -- "--color0: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-COLOR1=$(grep -o -- "--color1: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-COLOR2=$(grep -o -- "--color2: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-COLOR3=$(grep -o -- "--color3: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-COLOR4=$(grep -o -- "--color4: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-COLOR5=$(grep -o -- "--color5: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-COLOR6=$(grep -o -- "--color6: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-COLOR7=$(grep -o -- "--color7: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-COLOR8=$(grep -o -- "--color8: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
-COLOR9=$(grep -o -- "--color9: #[0-9a-fA-F]\+" ~/.cache/wal/colors.css | cut -d '#' -f2)
+BACKGROUND=$(grep -o -- "--background: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+FOREGROUND=$(grep -o -- "--foreground: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLOR0=$(grep -o -- "--color0: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLOR1=$(grep -o -- "--color1: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLOR2=$(grep -o -- "--color2: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLOR3=$(grep -o -- "--color3: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLOR4=$(grep -o -- "--color4: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLOR5=$(grep -o -- "--color5: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLOR6=$(grep -o -- "--color6: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLOR7=$(grep -o -- "--color7: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLOR8=$(grep -o -- "--color8: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLOR9=$(grep -o -- "--color9: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
 
 # If any color is empty, use default values from your previous output
 if [ -z "$BACKGROUND" ]; then BACKGROUND="1e1d1c"; fi
@@ -103,12 +103,12 @@ echo "SELECTION_BG: #$SELECTION_BG"
 # Create or update the wofi style.css
 cat > ~/.config/wofi/style.css << EOL
 /* ~/.config/wofi/style.css */
-@import url("../../.cache/wal/colors.css");
+@import url("./colors.css");
 
 /* Base styling */
 window {
     margin: 5px;
-    border-radius: 12px;
+    border-radius: 8px;
     background-color: rgba($(hex_to_rgb "$BACKGROUND"), 0.9);
     font-family: "SFMono Nerd Font Mono";
 }

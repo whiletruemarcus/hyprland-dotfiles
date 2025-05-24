@@ -19,6 +19,11 @@ image/tiff=org.gnome.eog.desktop
 video/mp4=vlc.desktop
 video/mkv=vlc.desktop
 video/x-matroska=vlc.desktop
+video/vnd.avi=vlc.desktop
+application/x-zerosize=org.gnome.eog.desktop
+application/zip=org.gnome.FileRoller.desktop
+application/x-shellscript=code.desktop
+application/octet-stream=code.desktop
 
 [Added Associations]
 x-scheme-handler/http=zen.desktop;
@@ -34,3 +39,8 @@ application/x-extension-xht=zen.desktop;
 video/mp4=vlc.desktop;
 text/plain=code.desktop;
 video/x-matroska=vlc.desktop;
+video/vnd.avi=vlc.desktop;
+application/x-zerosize=org.gnome.eog.desktop;
+application/zip=org.gnome.FileRoller.desktop;
+application/x-shellscript=code.desktop;
+application/octet-stream=code.desktop;

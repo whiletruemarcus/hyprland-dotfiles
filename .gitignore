@@ -3,7 +3,6 @@ Cursor/
 Slack/
 nwg-look/
 nwg-displays/
-nwg-panel/
 go/
 fontforge/
 google-chrome/
@@ -12,7 +11,13 @@ spotify/
 gopls/
 kde.org/
 ego/
-nautilus/
 ranger/
 yay/
 systemd/
+balenaEtcher/
+flutter/
+obsidian/
+inkscape/
+obs-studio/
+pulse/
+btop/btop.log

@@ -1,49 +1,55 @@
 [global]
-    monitor = 0
-    follow = keyboard
-    width = (300, 800)
-    height = (100, 400)
-    origin = top-right
-    offset = (17,17)
-    scale = 2
-    gap_size = 5
-    frame_width = 0
-    corner_radius = 12                # ← Increased for larger border
-    padding = 12                      # ← Inner spacing
-    horizontal_padding = 12           # ← Horizontal inner spacing
-    corner_radius = 12
-    transparency = 10
-    enable_posix_regex = true
-    font = "SF Pro Text 12"
-    line_height = 3
-    max_icon_size = 128
-    markup = full
-    format = "<b>%a</b>\n<span foreground='#AAAAAA'>%s</span>\n%b"
-    progress_bar = true
-    progress_bar_height = 8
-    progress_bar_corner_radius = 4
-    progress_bar_frame_width = 1
-    separator_height = 2
-    separator_color = "#e2e0d680"
-    icon_path = "/usr/share/icons/Papirus-Dark/24x24/apps/:/home/saatvik333/.icons/"
+monitor = 0
+follow = keyboard
+width = (300, 800)
+height = (100, 400)
+origin = top-right
+offset = (17,17)
+scale = 2
+gap_size = 10
+indicate_hidden = yes
+frame_width = 0
+corner_radius = 8
+padding = 12
+horizontal_padding = 12
+enable_posix_regex = true
+font = "SFMono Nerd Font Mono"
+line_height = 3
+alignment = left
+stack_duplicates = true
+hide_duplicate_count = false
+icon_path = "/usr/share/icons/Papirus-Dark/24x24/apps/:/home/saatvik333/.icons/"
+max_icon_size = 128
+markup = full
+format = "<b>%a</b>\n%s\n%b"
+progress_bar = true
+progress_bar_height = 10
+progress_bar_corner_radius = 4
+progress_bar_frame_width = 1
+separator_height = 2
+ignore_dbusclose = false
+force_xwayland = false
+frame_color = "#A2B395"
+highlight = "#E7C372"
+separator_color= "#EAF6F2"
 
-    ignore_dbusclose = false
-    force_xwayland = false
+[experimental]
+per_monitor_dpi = false
 
 [urgency_low]
-    background = "#1c1f2780"
-    foreground = "#e2e0d6"
-    frame_color = "#C7B095"
-    timeout = 5
+timeout = 2
+background = "#1F2222ee"
+foreground = "#EAF6F2"
+frame_color = "#A2B395"
 
 [urgency_normal]
-    background = "#1c1f27cc"
-    foreground = "#e2e0d6"
-    frame_color = "#7A8D8D"
-    timeout = 8
+timeout = 3
+background = "#1F222280"
+foreground = "#EAF6F2"
+frame_color = "#C4E6DA"
 
 [urgency_critical]
-    background = "#717687"
-    foreground = "#1c1f27"
-    frame_color = "#717687"
-    timeout = 0
+timeout = 4
+background = "#1F2222ee"
+foreground = "#EAF6F2"
+frame_color = "#4F7465"

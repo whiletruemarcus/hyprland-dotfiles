@@ -1,5 +1,8 @@
 # Alacritty Configuration
 
+[general]
+import = ["./colors.toml"]
+
 [window]
 padding.x = 10
 padding.y = 10
@@ -7,25 +10,20 @@ dynamic_padding = true
 opacity = 0.9
 
 [font]
-size = 11.0
+size = 11.25
 
 [font.normal]
 family = "SFMono Nerd Font Mono"
-style = "Regular"
 
-[font.bold]
-family = "SFMono Nerd Font Mono"
-style = "Bold"
+[scrolling]
+multiplier = 6
 
-[font.italic]
-family = "SFMono Nerd Font Mono"
-style = "Italic"
+[selection]
+save_to_clipboard = true
 
 [cursor]
 style.shape = "Block"
 unfocused_hollow = true
 
-[keyboard]
-bindings = [
-  { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" },
-]
+[mouse]
+hide_when_typing = true

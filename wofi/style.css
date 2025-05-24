@@ -1,11 +1,11 @@
 /* ~/.config/wofi/style.css */
-@import url("../../.cache/wal/colors.css");
+@import url("./colors.css");
 
 /* Base styling */
 window {
     margin: 5px;
-    border-radius: 12px;
-    background-color: rgba(28,31,39, 0.9);
+    border-radius: 8px;
+    background-color: rgba(34,38,38, 0.9);
     font-family: "SFMono Nerd Font Mono";
 }
 
@@ -13,16 +13,16 @@ window {
 #input {
     margin: 8px;
     padding: 8px 12px;
-    border: 2px solid #ccb79f;
+    border: 2px solid #bab49c;
     border-radius: 8px;
     color: var(--foreground);
-    background-color: rgba(28,31,39, 0.7);
+    background-color: rgba(30,29,28, 0.7);
     outline: none;
-    caret-color: #d2bdae;
+    caret-color: #c6bea1;
 }
 
 #input:focus {
-    border-color: #d2bdae;
+    border-color: #c6bea1;
 }
 
 /* Container styling */
@@ -56,7 +56,7 @@ window {
 }
 
 #text:selected {
-    color: #d2bdae;
+    color: #c6bea1;
     font-weight: bold;
 }
 
@@ -69,11 +69,11 @@ window {
 }
 
 #entry:hover {
-    background-color: rgba(163,158,157, 0.15);
+    background-color: rgba(163,160,140, 0.15);
 }
 
 #entry:selected {
-    background-color: rgba(163,158,157, 0.3);
+    background-color: rgba(163,160,140, 0.3);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
@@ -90,6 +90,6 @@ window {
 }
 
 #urgent {
-    background-color: rgba(113,118,135, 0.2);
-    color: #717687;
+    background-color: rgba(146,139,120, 0.2);
+    color: #928B78;
 }
