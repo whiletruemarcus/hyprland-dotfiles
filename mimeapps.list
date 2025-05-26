@@ -24,6 +24,7 @@ application/x-zerosize=org.gnome.eog.desktop
 application/zip=org.gnome.FileRoller.desktop
 application/x-shellscript=code.desktop
 application/octet-stream=code.desktop
+application/pdf=org.gnome.Evince.desktop
 
 [Added Associations]
 x-scheme-handler/http=zen.desktop;
@@ -44,3 +45,6 @@ application/x-zerosize=org.gnome.eog.desktop;
 application/zip=org.gnome.FileRoller.desktop;
 application/x-shellscript=code.desktop;
 application/octet-stream=code.desktop;
+inode/directory=org.gnome.eog.desktop;
+text/markdown=org.pwmt.zathura.desktop;
+application/pdf=org.pwmt.zathura.desktop;org.gnome.Evince.desktop;

@@ -1,7 +1,6 @@
 @import './colors.css';
 
 * {
-	transition: 200ms ease-in;
 	box-shadow: none;
 }
 

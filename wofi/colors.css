@@ -4,28 +4,28 @@ css = { src = "wofi.css", dst = "~/.config/wofi/colors.css" }
  */
 
 :root {
-    --wallpaper: url("/home/saatvik333/Pictures/Wallpapers/minimal-dark-teal.jpg");
+    --wallpaper: url("/home/saatvik333/Pictures/Wallpapers/Catppuccin/catppuccin-black-hole.png");
 
     /* Special */
-    --background: #222626;
-    --foreground: #EAF6F2;
-    --cursor: #ABC3B8;
+    --background: #07070A;
+    --foreground: #ADADB2;
+    --cursor: #CBB8B3;
 
     /* Colors */
-    --color0:  #474C4B;
-    --color1:  #4F7465;
-    --color2:  #6B907F;
-    --color3:  #8D9A75;
-    --color4:  #A2B395;
-    --color5:  #E7C372;
-    --color6:  #C4E6DA;
-    --color7:  #D9EAE4;
-    --color8:  #98A4A0;
-    --color9:  #4F7465;
-    --color10: #6B907F;
-    --color11: #8D9A75;
-    --color12: #A2B395;
-    --color13: #E7C372;
-    --color14: #C4E6DA;
-    --color15: #D9EAE4;
+    --color0:  #3F4039;
+    --color1:  #4B4B54;
+    --color2:  #787B8E;
+    --color3:  #818D7E;
+    --color4:  #A7A2C9;
+    --color5:  #E8C3B4;
+    --color6:  #D7DEB2;
+    --color7:  #828288;
+    --color8:  #5B5B5F;
+    --color9:  #4B4B54;
+    --color10: #787B8E;
+    --color11: #818D7E;
+    --color12: #A7A2C9;
+    --color13: #E8C3B4;
+    --color14: #D7DEB2;
+    --color15: #828288;
 }

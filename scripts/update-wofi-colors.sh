@@ -4,58 +4,36 @@
 # Make sure the config directory exists
 mkdir -p ~/.config/wofi
 
-# Extract all colors from pywal
-BACKGROUND=$(grep -o -- "--background: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-FOREGROUND=$(grep -o -- "--foreground: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-COLOR0=$(grep -o -- "--color0: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-COLOR1=$(grep -o -- "--color1: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-COLOR2=$(grep -o -- "--color2: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-COLOR3=$(grep -o -- "--color3: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-COLOR4=$(grep -o -- "--color4: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-COLOR5=$(grep -o -- "--color5: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-COLOR6=$(grep -o -- "--color6: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-COLOR7=$(grep -o -- "--color7: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-COLOR8=$(grep -o -- "--color8: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
-COLOR9=$(grep -o -- "--color9: #[0-9a-fA-F]\+" ~/.config/wofi/colors.css | cut -d '#' -f2)
+COLORS_FILE="$HOME/.config/wofi/colors.css"
 
-# If any color is empty, use default values from your previous output
-if [ -z "$BACKGROUND" ]; then BACKGROUND="1e1d1c"; fi
-if [ -z "$FOREGROUND" ]; then FOREGROUND="e5e0cf"; fi
-if [ -z "$COLOR0" ]; then COLOR0="1e1d1c"; fi
-if [ -z "$COLOR1" ]; then COLOR1="928B78"; fi
-if [ -z "$COLOR2" ]; then COLOR2="A0967F"; fi
-if [ -z "$COLOR3" ]; then COLOR3="9F9B86"; fi
-if [ -z "$COLOR4" ]; then COLOR4="B3AC91"; fi
-if [ -z "$COLOR5" ]; then COLOR5="C4BB9D"; fi
-if [ -z "$COLOR6" ]; then COLOR6="BAC0A6"; fi
-if [ -z "$COLOR7" ]; then COLOR7="e5e0cf"; fi
-if [ -z "$COLOR8" ]; then COLOR8="a09c90"; fi
-if [ -z "$COLOR9" ]; then COLOR9="928B78"; fi
-
-# RGB color conversion function for rgba
-hex_to_rgb() {
-    hex=$1
-    r=$(printf '0x%0.2s' "$hex")
-    g=$(printf '0x%0.2s' "${hex#??}")
-    b=$(printf '0x%0.2s' "${hex#????}")
-    echo "$((r)),$((g)),$((b))"
+# Function to extract color value from CSS variable
+extract_color() {
+    local var_name="$1"
+    grep -o "^[[:space:]]*--${var_name}:[[:space:]]*#[0-9a-fA-F]\{6\}" "$COLORS_FILE" | \
+    sed -E 's/^[[:space:]]*--[^:]+:[[:space:]]*#([0-9a-fA-F]{6}).*/\1/'
 }
 
-# Lighten a hex color by percentage
-lighten_color() {
-    hex=$1
-    percent=$2
+# Function to convert hex to RGB values
+hex_to_rgb() {
+    local hex="$1"
+    local r=$((0x${hex:0:2}))
+    local g=$((0x${hex:2:2}))
+    local b=$((0x${hex:4:2}))
+    echo "$r,$g,$b"
+}
 
-    r=$(printf '0x%0.2s' "$hex")
-    g=$(printf '0x%0.2s' "${hex#??}")
-    b=$(printf '0x%0.2s' "${hex#????}")
+# Function to lighten a color
+lighten_hex() {
+    local hex="$1"
+    local percent="$2"
+    local r=$((0x${hex:0:2}))
+    local g=$((0x${hex:2:2}))
+    local b=$((0x${hex:4:2}))
 
-    # Calculate the new values
     r=$(( r + (255 - r) * percent / 100 ))
     g=$(( g + (255 - g) * percent / 100 ))
     b=$(( b + (255 - b) * percent / 100 ))
 
-    # Ensure values are in range
     r=$(( r > 255 ? 255 : r ))
     g=$(( g > 255 ? 255 : g ))
     b=$(( b > 255 ? 255 : b ))
@@ -63,143 +41,135 @@ lighten_color() {
     printf "%02x%02x%02x" "$r" "$g" "$b"
 }
 
-# Darken a hex color by percentage
-darken_color() {
-    hex=$1
-    percent=$2
+# Extract colors from CSS file
+if [[ ! -f "$COLORS_FILE" ]]; then
+    echo "Error: Colors file not found at $COLORS_FILE"
+    exit 1
+fi
 
-    r=$(printf '0x%0.2s' "$hex")
-    g=$(printf '0x%0.2s' "${hex#??}")
-    b=$(printf '0x%0.2s' "${hex#????}")
+# Extract all required colors
+BG=$(extract_color "background")
+FG=$(extract_color "foreground")
+C0=$(extract_color "color0")
+C1=$(extract_color "color1")
+C3=$(extract_color "color3")
+C4=$(extract_color "color4")
+C5=$(extract_color "color5")
 
-    # Calculate the new values
-    r=$(( r - r * percent / 100 ))
-    g=$(( g - g * percent / 100 ))
-    b=$(( b - b * percent / 100 ))
+# Fallback colors if extraction fails
+BG=${BG:-"2A2D2E"}
+FG=${FG:-"FFD3FF"}
+C0=${C0:-"4F5253"}
+C1=${C1:-"573B71"}
+C3=${C3:-"8B4AAB"}
+C4=${C4:-"AE57CE"}
+C5=${C5:-"DC6FF3"}
 
-    # Ensure values are in range
-    r=$(( r < 0 ? 0 : r ))
-    g=$(( g < 0 ? 0 : g ))
-    b=$(( b < 0 ? 0 : b ))
+# Generate accent colors
+ACCENT=$(lighten_hex "$C4" 10)
+SELECTION=$(lighten_hex "$C3" 15)
 
-    printf "%02x%02x%02x" "$r" "$g" "$b"
-}
+# Convert to RGB for rgba usage
+BG_RGB=$(hex_to_rgb "$BG")
+C0_RGB=$(hex_to_rgb "$C0")
+C1_RGB=$(hex_to_rgb "$C1")
+SELECTION_RGB=$(hex_to_rgb "$SELECTION")
 
-# Generate accent colors based on existing colors
-ACCENT=$(lighten_color "$COLOR4" 10)
-ACCENT_DARK=$(darken_color "$COLOR4" 10)
-HIGHLIGHT=$(lighten_color "$COLOR5" 5)
-SELECTION_BG=$(lighten_color "$COLOR3" 5)
+echo "Generated colors:"
+echo "Background: #$BG -> rgba($BG_RGB)"
+echo "Accent: #$ACCENT"
+echo "Selection: #$SELECTION -> rgba($SELECTION_RGB)"
 
-# Debug output
-echo "Extracted and generated colors:"
-echo "BACKGROUND: #$BACKGROUND"
-echo "FOREGROUND: #$FOREGROUND"
-echo "ACCENT: #$ACCENT"
-echo "ACCENT_DARK: #$ACCENT_DARK"
-echo "HIGHLIGHT: #$HIGHLIGHT"
-echo "SELECTION_BG: #$SELECTION_BG"
-
-# Create or update the wofi style.css
+# Create wofi style.css
 cat > ~/.config/wofi/style.css << EOL
-/* ~/.config/wofi/style.css */
-@import url("./colors.css");
+/* ~/.config/wofi/style.css - Auto-generated from colors.css */
 
-/* Base styling */
 window {
     margin: 5px;
     border-radius: 8px;
-    background-color: rgba($(hex_to_rgb "$BACKGROUND"), 0.9);
-    font-family: "SFMono Nerd Font Mono";
+    background-color: rgba($BG_RGB, 0.9);
+    font-family: "SFMono Nerd Font Mono", monospace;
 }
 
-/* Search input styling */
 #input {
     margin: 8px;
-    padding: 8px 12px;
+    padding: 10px 12px;
     border: 2px solid #${ACCENT};
     border-radius: 8px;
-    color: var(--foreground);
-    background-color: rgba($(hex_to_rgb "$COLOR0"), 0.7);
+    color: #${FG};
+    background-color: rgba($C0_RGB, 0.8);
     outline: none;
-    caret-color: #${HIGHLIGHT};
+    caret-color: #${C5};
+    font-size: 14px;
 }
 
 #input:focus {
-    border-color: #${HIGHLIGHT};
+    border-color: #${C5};
+    box-shadow: 0 0 8px rgba($SELECTION_RGB, 0.3);
 }
 
-/* Container styling */
 #inner-box {
     margin: 8px;
-    border: none;
-    background-color: transparent;
     padding-top: 5px;
+    background-color: transparent;
 }
 
 #outer-box {
-    margin: 0px;
-    border: none;
-    background-color: transparent;
+    margin: 0;
     padding: 5px;
+    background-color: transparent;
 }
 
 #scroll {
-    margin: 0px;
-    border: none;
+    margin: 0;
     padding: 5px;
 }
 
-/* Text styling */
 #text {
     margin: 3px;
-    border: none;
-    color: var(--foreground);
-    font-size: 13px;
     padding: 3px;
+    color: #${FG};
+    font-size: 13px;
 }
 
 #text:selected {
-    color: #${HIGHLIGHT};
+    color: #${C5};
     font-weight: bold;
 }
 
-/* Entry styling */
 #entry {
-    padding: 7px;
+    padding: 8px;
     margin: 2px 5px;
     border-radius: 8px;
-    transition: all 0.15s ease;
+    transition: all 0.2s ease;
 }
 
 #entry:hover {
-    background-color: rgba($(hex_to_rgb "$SELECTION_BG"), 0.15);
+    background-color: rgba($SELECTION_RGB, 0.2);
 }
 
 #entry:selected {
-    background-color: rgba($(hex_to_rgb "$SELECTION_BG"), 0.3);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: rgba($SELECTION_RGB, 0.4);
+    box-shadow: 0 2px 6px rgba($SELECTION_RGB, 0.2);
 }
 
-/* Image/icon styling */
 #img {
     margin-right: 10px;
     margin-left: 5px;
 }
 
-/* Unselected and urgent styling */
 #unselected {
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 #urgent {
-    background-color: rgba($(hex_to_rgb "$COLOR1"), 0.2);
-    color: #${COLOR1};
+    background-color: rgba($C1_RGB, 0.3);
+    color: #${C1};
+    border-left: 3px solid #${C1};
 }
 EOL
 
-# Also create a simple config file
+# Create or update wofi config
 cat > ~/.config/wofi/config << EOL
 width=600
 height=400
@@ -219,4 +189,4 @@ matching=fuzzy
 hide_scroll=true
 EOL
 
-echo "Enhanced wofi theme updated with pywal colors"
+echo "✓ Wofi theme updated successfully with extracted colors"

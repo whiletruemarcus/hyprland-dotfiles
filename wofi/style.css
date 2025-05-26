@@ -1,95 +1,85 @@
-/* ~/.config/wofi/style.css */
-@import url("./colors.css");
+/* ~/.config/wofi/style.css - Auto-generated from colors.css */
 
-/* Base styling */
 window {
     margin: 5px;
     border-radius: 8px;
-    background-color: rgba(34,38,38, 0.9);
-    font-family: "SFMono Nerd Font Mono";
+    background-color: rgba(7,7,10, 0.9);
+    font-family: "SFMono Nerd Font Mono", monospace;
 }
 
-/* Search input styling */
 #input {
     margin: 8px;
-    padding: 8px 12px;
-    border: 2px solid #bab49c;
+    padding: 10px 12px;
+    border: 2px solid #afabce;
     border-radius: 8px;
-    color: var(--foreground);
-    background-color: rgba(30,29,28, 0.7);
+    color: #ADADB2;
+    background-color: rgba(63,64,57, 0.8);
     outline: none;
-    caret-color: #c6bea1;
+    caret-color: #E8C3B4;
+    font-size: 14px;
 }
 
 #input:focus {
-    border-color: #c6bea1;
+    border-color: #E8C3B4;
+    box-shadow: 0 0 8px rgba(147,158,145, 0.3);
 }
 
-/* Container styling */
 #inner-box {
     margin: 8px;
-    border: none;
-    background-color: transparent;
     padding-top: 5px;
+    background-color: transparent;
 }
 
 #outer-box {
-    margin: 0px;
-    border: none;
-    background-color: transparent;
+    margin: 0;
     padding: 5px;
+    background-color: transparent;
 }
 
 #scroll {
-    margin: 0px;
-    border: none;
+    margin: 0;
     padding: 5px;
 }
 
-/* Text styling */
 #text {
     margin: 3px;
-    border: none;
-    color: var(--foreground);
-    font-size: 13px;
     padding: 3px;
+    color: #ADADB2;
+    font-size: 13px;
 }
 
 #text:selected {
-    color: #c6bea1;
+    color: #E8C3B4;
     font-weight: bold;
 }
 
-/* Entry styling */
 #entry {
-    padding: 7px;
+    padding: 8px;
     margin: 2px 5px;
     border-radius: 8px;
-    transition: all 0.15s ease;
+    transition: all 0.2s ease;
 }
 
 #entry:hover {
-    background-color: rgba(163,160,140, 0.15);
+    background-color: rgba(147,158,145, 0.2);
 }
 
 #entry:selected {
-    background-color: rgba(163,160,140, 0.3);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    background-color: rgba(147,158,145, 0.4);
+    box-shadow: 0 2px 6px rgba(147,158,145, 0.2);
 }
 
-/* Image/icon styling */
 #img {
     margin-right: 10px;
     margin-left: 5px;
 }
 
-/* Unselected and urgent styling */
 #unselected {
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 #urgent {
-    background-color: rgba(146,139,120, 0.2);
-    color: #928B78;
+    background-color: rgba(75,75,84, 0.3);
+    color: #4B4B54;
+    border-left: 3px solid #4B4B54;
 }

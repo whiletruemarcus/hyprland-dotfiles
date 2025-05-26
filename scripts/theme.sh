@@ -2,8 +2,10 @@
 
 HYPRLOCK_CONF="$HOME/.config/hypr/hyprlock.conf"
 WOFI_SCRIPT="$HOME/.config/scripts/update-wofi-colors.sh"
+WAYBAR_WALLPAPER_DETECTION="$HOME/.config/scripts/waybar-wallpaper-detection.sh"
+GTK_SCRIPT="$HOME/.config/scripts/update-gtk-theme.sh"
 
-sleep 0.2
+sleep 0.3
 # --- Functions ---
 current_wallpaper() {
     wallpaper=$(swww query | grep -oP '(?<=image: ).*')
@@ -30,8 +32,24 @@ update_hyprlock() {
 apply_theme() {
     local wallpaper="$1"
 
+    # Check the waybar region to adjust colors automatically
+    if [ -x "$WAYBAR_WALLPAPER_DETECTION" ]; then
+        "$WAYBAR_WALLPAPER_DETECTION"
+    else
+        echo "Error: Waybar wallpaper detection script not found or not executable at $WAYBAR_WALLPAPER_DETECTION"
+        return 1
+    fi
+
+    # Update GTK theme
+    if [ -x "$GTK_SCRIPT" ]; then
+        "$GTK_SCRIPT"
+    else
+        echo "Error: GTK theme update script not found or not executable at $GTK_SCRIPT"
+        return 1
+    fi
+
     # Sets the theme using wallust templates
-    wallust run $wallpaper
+    wallust run $wallpaper --dynamic-threshold
 
     # Execute the Wofi script to update colors
     if [ -x "$WOFI_SCRIPT" ]; then
@@ -44,11 +62,11 @@ apply_theme() {
 
 reload_components() {
     hyprctl reload
-    sleep 0.05
+    sleep 0.1
     killall -SIGUSR2 waybar
-    sleep 0.05
+    sleep 0.1
     killall dunst
-    sleep 0.05
+    sleep 0.1
     dunst & disown
 
     echo "Successfully updated dunst colors!"

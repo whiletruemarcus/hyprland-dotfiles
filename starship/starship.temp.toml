@@ -1,7 +1,9 @@
 # ~/.config/starship.toml
-
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
+
+# Add a newline before the prompt, but only after commands
+add_newline = true
 
 # Set the format of the prompt
 format = """
@@ -16,7 +18,6 @@ $git_status\
 [](fg:#0096BE bg:#1c1f27)\
 $time\
 [ ](fg:#2A2A2A)\
-$line_break\
 $python\
 $rust\
 $golang\
