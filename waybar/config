@@ -151,12 +151,12 @@
       "<span color='#d79921'>▅</span>", // yellow
       "<span color='#d79921'>▆</span>", // yellow
       "<span color='#fe8019'>▇</span>", // orange
-      "<span color='#cc241d'>█</span>" // red
+      "<span color='#cc241d'>█</span>"  // red
     ],
     "interval": 1,
     "tooltip": true,
     "tooltip-format": "CPU Frequency: {avg_frequency} GHz",
-    "on-click": "alacritty -e btop"
+    "on-click": "alacritty -e btm"
   },
   "custom/menu": {
     "format": "<span size='15pt' font='Material Icons'>menu_open</span>",

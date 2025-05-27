@@ -4,8 +4,6 @@
 WALLPAPER=$(cat /home/saatvik333/.config/waytrogen/wallpaper.txt)
 [[ -z "$WALLPAPER" ]] && exit 1
 
-
-
 # Get image dimensions and calculate crop region
 IMG_INFO=$(magick identify -format "%w %h" "$WALLPAPER")
 read -r IMG_W IMG_H <<< "$IMG_INFO"

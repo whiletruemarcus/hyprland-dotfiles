@@ -169,24 +169,4 @@ window {
 }
 EOL
 
-# Create or update wofi config
-cat > ~/.config/wofi/config << EOL
-width=600
-height=400
-location=center
-show=drun
-prompt=Applications
-filter_rate=100
-allow_markup=true
-no_actions=true
-halign=fill
-orientation=vertical
-content_halign=fill
-insensitive=true
-allow_images=true
-image_size=32
-matching=fuzzy
-hide_scroll=true
-EOL
-
 echo "✓ Wofi theme updated successfully with extracted colors"

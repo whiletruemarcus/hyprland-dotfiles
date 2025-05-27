@@ -41,7 +41,6 @@ window#waybar {
     margin: 0 4px;
     /* border: solid 2px @foreground; */
     border-radius: 8px;
-    transition: all 0.3s ease;
 }
 
 /* ======================= */
@@ -58,7 +57,6 @@ window#waybar {
     margin: 0 4px;
     /* border: solid 2px transparent; */
     border-radius: 8px;
-    transition: all 0.3s ease;
 }
 
 #workspaces button.active {
@@ -79,7 +77,6 @@ window#waybar {
     color: gray;
     font-size: 14px;
     border-radius: 8px;
-    transition: all 0.3s ease;
 }
 
 #hyprland-workspaces button.active {
@@ -109,7 +106,6 @@ window#waybar {
     /* border: solid 2px @foreground; */
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
     min-width: 100px;
 }
 
@@ -143,7 +139,6 @@ window#waybar {
     color: @foreground;
     background: rgba(255, 255, 255, 0.1);
     font-weight: 500;
-    transition: all 0.3s ease;
 }
 
 #custom-monitors {
