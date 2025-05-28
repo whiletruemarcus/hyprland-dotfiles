@@ -2,25 +2,25 @@
 # alacritty = { template = 'alacritty.toml', target = '~/.config/alacritty/colors.toml' }
 # and alacritty.toml should import that file under [general]
 [colors.primary]
-background = "#0C1523"
-foreground = "#B1A9AB"
+background = "#0C0D0F"
+foreground = "#AAADB5"
 
 [colors.normal]
-black   = "#3B3737"
-red     = "#524145"
-green   = "#586F93"
-yellow  = "#A66A75"
-blue    = "#F43F1F"
-magenta = "#859BB1"
-cyan    = "#E5CAC8"
-white   = "#867C7E"
+black   = "#3B3327"
+red     = "#434B5B"
+green   = "#595C62"
+yellow  = "#6E6C69"
+blue    = "#857E70"
+magenta = "#907C5D"
+cyan    = "#BC9C63"
+white   = "#7D828D"
 
 [colors.bright]
-black   = "#5E5758"
-red     = "#524145"
-green   = "#586F93"
-yellow  = "#A66A75"
-blue    = "#F43F1F"
-magenta = "#859BB1"
-cyan    = "#E5CAC8"
-white   = "#867C7E"
+black   = "#585B62"
+red     = "#434B5B"
+green   = "#595C62"
+yellow  = "#6E6C69"
+blue    = "#857E70"
+magenta = "#907C5D"
+cyan    = "#BC9C63"
+white   = "#7D828D"

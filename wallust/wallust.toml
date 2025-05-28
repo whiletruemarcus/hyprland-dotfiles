@@ -61,3 +61,5 @@ gtk3 = { src = 'gtk.css', dst = '~/.config/gtk-3.0/colors.css' }
 gtk4 = { src = 'gtk.css', dst = '~/.config/gtk-4.0/colors.css' }
 
 dunst = { src = 'dunstrc', dst = '~/.config/dunst/dunstrc' }
+
+hyprswitch = { src = 'hyprswitch.css', dst = '~/.config/hypr/hyprswitch.css' }

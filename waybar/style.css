@@ -339,7 +339,7 @@ tooltip class {
     min-width: 8px;
     min-height: 8px;
     border-radius: 4px;
-    background: @color14;
+    background: @color6;
 }
 
 /* ======================= */
@@ -377,7 +377,7 @@ tooltip class {
     min-width: 8px;
     min-height: 8px;
     border-radius: 4px;
-    background: @color12;
+    background: @color9;
 }
 
 /* ======================= */
