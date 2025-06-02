@@ -2,43 +2,65 @@
 
 # Prevent multiple instances
 script_name=$(basename "$0")
-instance_count=$(ps aux | grep -F "$script_name" | grep -v grep | grep -v $$ | wc -l)
-if [ $instance_count -gt 1 ]; then
-    sleep $instance_count
+lockfile="/tmp/${script_name}.lock"
+
+# Use flock for better process control
+exec 200>"$lockfile"
+if ! flock -n 200; then
+    exit 1
 fi
 
-# Define color thresholds
-threshoold_null=0
-threshhold_yellow=25
-threshhold_red=100
+# Define color thresholds (fixed typo)
+threshold_null=0
+threshold_yellow=25
+threshold_red=100
 
 # Check for database lock and wait if necessary
 check_lock_files() {
     local pacman_lock="/var/lib/pacman/db.lck"
     local checkup_lock="${TMPDIR:-/tmp}/checkup-db-${UID}/db.lck"
+    local timeout=30
+    local elapsed=0
+
     while [ -f "$pacman_lock" ] || [ -f "$checkup_lock" ]; do
+        if [ $elapsed -ge $timeout ]; then
+            echo '{"tooltip": "Database locked - try again later", "class": "transparent"}' >&2
+            exit 1
+        fi
         sleep 1
+        elapsed=$((elapsed + 1))
     done
 }
 
 check_lock_files
-updates=$(checkupdates-with-aur | wc -l)
+
+# Get update count with error handling
+if ! updates=$(checkupdates-with-aur 2>/dev/null | wc -l); then
+    echo '{"tooltip": "Error checking updates", "class": "transparent"}'
+    exit 1
+fi
 
 # Determine CSS class based on update count
 css_class="transparent"
-if [ "$updates" -gt $threshoold_null ]; then
+if [ "$updates" -gt $threshold_null ]; then
     css_class="green"
 fi
-if [ "$updates" -gt $threshhold_yellow ]; then
+if [ "$updates" -gt $threshold_yellow ]; then
     css_class="yellow"
 fi
-if [ "$updates" -gt $threshhold_red ]; then
+if [ "$updates" -gt $threshold_red ]; then
     css_class="red"
 fi
 
 # Output JSON for Waybar
 if [ "$updates" -gt 0 ]; then
-    printf '{"tooltip": "%s package require updates", "class": "%s"}' "$updates" "$css_class"
+    printf '{"text": "%s", "tooltip": "%s packages require updates", "class": "%s"}\n' "$updates" "$updates" "$css_class"
 else
-    printf '{"tooltip": "No updates available", "class": "transparent"}'
+    printf '{"text": "", "tooltip": "No updates available", "class": "transparent"}\n'
 fi
+
+# Signal Waybar to update
+pkill -SIGRTMIN+8 waybar 2>/dev/null
+
+# Release lock
+flock -u 200

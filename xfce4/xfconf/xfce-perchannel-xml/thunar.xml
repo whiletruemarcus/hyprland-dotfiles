@@ -9,7 +9,7 @@
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="last-statusbar-visible" type="bool" value="false"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_50_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,137,132,125,50,290,50,177,422,50,117,62,50,86"/>
+  <property name="last-details-view-column-widths" type="string" value="50,137,132,125,91,471,50,177,346,50,117,78,50,146"/>
   <property name="misc-single-click" type="bool" value="false"/>
   <property name="misc-use-csd" type="bool" value="false"/>
   <property name="misc-text-beside-icons" type="bool" value="false"/>
@@ -18,10 +18,9 @@
   <property name="tree-icon-size" type="string" value="THUNAR_ICON_SIZE_24"/>
   <property name="misc-symbolic-icons-in-sidepane" type="bool" value="false"/>
   <property name="misc-image-preview-mode" type="string" value="THUNAR_IMAGE_PREVIEW_MODE_EMBEDDED"/>
-  <property name="last-show-hidden" type="bool" value="false"/>
+  <property name="last-show-hidden" type="bool" value="true"/>
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="network:///"/>
-    <value type="string" value="recent:///"/>
     <value type="string" value="file:///home/saatvik333/Desktop"/>
     <value type="string" value="computer:///"/>
     <value type="string" value="file:///home/saatvik333"/>

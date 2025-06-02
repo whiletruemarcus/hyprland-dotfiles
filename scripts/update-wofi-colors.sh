@@ -1,5 +1,15 @@
 #!/bin/bash
+
+#===============================================================================
+# Updates wofi colors
 # ~/.config/scripts/update-wofi-colors.sh
+# Description: Updates wofi style.css based on the colors defined in colors.css by
+# converting hex colors to rgba and applying lightening effects.
+# It also manages GTK configuration files, symlinks for assets, and updates xsettingsd.
+# Author: saatvik333
+# Version: 2.0
+# Dependencies: sed grep 
+#===============================================================================
 
 # Make sure the config directory exists
 mkdir -p ~/.config/wofi

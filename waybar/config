@@ -6,8 +6,6 @@
   "modules-left": [
     "custom/arch",
     "hyprland/workspaces",
-    "mpris",
-    "cava"
   ],
   "modules-center": [
     "clock"
@@ -81,48 +79,12 @@
       "*": 4
     }
   },
-  "mpris": {
-    "format": "{player_icon} {title} - {artist}",
-    "format-paused": "{player_icon} {title} - {artist}",
-    "player-icons": {
-      "default": "",
-      "spotify": "",
-      "firefox": "",
-      "chrome": "",
-      "vlc": "󰕼"
-    },
-    "max-length": 30,
-    "return-type": "json",
-    "interval": 2,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl next",
-    "on-click-middle": "playerctl previous",
-    "on-scroll-up": "playerctl position 5+",
-    "on-scroll-down": "playerctl position 5-",
-    "tooltip": false
-  },
   "clock": {
     "interval": 1,
     "format": "{:%I:%M:%S %p}",
     "format-alt": "{:%a, %b %d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-      "mode": "month",
-      "weeks-pos": "left",
-      "on-scroll": 1,
-      "format": {
-        "months": "<span color='#f5c2e7'><b>{}</b></span>",
-        "days": "<span color='#cdd6f4'>{}</span>",
-        "weeks": "<span color='#94e2d5'><b>W{}</b></span>",
-        "weekdays": "<span color='#fab387'><b>{}</b></span>",
-        "today": "<span color='#f38ba8'><b>{}</b></span>"
-      }
-    },
-    "actions": {
-      "on-click": "mode",
-      "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+    "on-click": "swaync-client -op"
   },
   "tray": {
     "icon-size": 14,
@@ -168,6 +130,7 @@
     "return-type": "json",
     "exec": "~/.config/scripts/check-package-updates.sh",
     "interval": 1800,
+    "signal": 8,
     "on-click": "alacritty -e yay -Syu --noconfirm && yay -Yc --noconfirm && ~/.config/scripts/check-package-updates.sh"
   },
   "power-profiles-daemon": {

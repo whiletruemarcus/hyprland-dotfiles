@@ -1,5 +1,15 @@
 #!/bin/bash
 
+#===============================================================================
+# Updates waybar.css
+# ~/.config/scripts/waybar-wallpaper-detection.sh
+# Description: Updates waybar.css template in wallust folder based on the wallpaper
+# region based on the luminosity of the top 5% area from top aka waybar region for clarity
+# Author: saatvik333
+# Version: 2.0
+# Dependencies: cat magick sed bc
+#===============================================================================
+
 # Get current wallpaper path
 WALLPAPER=$(cat /home/saatvik333/.config/waytrogen/wallpaper.txt)
 [[ -z "$WALLPAPER" ]] && exit 1
