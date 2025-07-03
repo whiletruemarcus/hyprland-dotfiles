@@ -63,3 +63,7 @@ gtk4 = { src = 'gtk.css', dst = '~/.config/gtk-4.0/colors.css' }
 dunst = { src = 'dunstrc', dst = '~/.config/dunst/dunstrc' }
 
 hyprswitch = { src = 'hyprswitch.css', dst = '~/.config/hypr/hyprswitch.css' }
+
+vscode = { src = 'vscode.json', dst = '~/.cache/wallust/colors.json' }
+
+vscode2 = { src = 'vscode', dst = '~/.cache/wallust/colors' }

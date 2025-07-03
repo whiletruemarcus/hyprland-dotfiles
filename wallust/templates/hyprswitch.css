@@ -21,7 +21,6 @@
 }
 
 .client {
-    font-size: 14px;
     border-radius: var(--border-radius);
     background-color: var(--background);
     border: 3px solid var(--border-color);

@@ -1,9 +1,19 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+#===============================================================================
+# GTK Files updation script
+# ~/.config/scripts/update-gtk-theme.sh
+# Description: Updates GTK themes based on the current wallpaper from specific folders.
+# This script reads the current wallpaper path, determines the appropriate GTK theme
+# based on the folder structure, and updates the GTK settings accordingly.
+# It also manages GTK configuration files, symlinks for assets, and updates xsettingsd.
+# Author: saatvik333
+# Version: 2.0
+# Dependencies: sed gtk3
+#===============================================================================
+
 set -euo pipefail
 shopt -s nullglob extglob
-
-# --- Validate Bash version ---
-(( BASH_VERSINFO[0] >= 4 )) || { echo >&2 "Requires Bash ≥4.0"; exit 1; }
 
 # --- Configuration Section ---
 declare -rg CONFIG_DIR="$HOME/.config"

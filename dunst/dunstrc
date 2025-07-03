@@ -13,7 +13,7 @@ corner_radius = 8
 padding = 12
 horizontal_padding = 12
 enable_posix_regex = true
-font = "SFMono Nerd Font Mono"
+font = "Liga SFMono Nerd Font"
 line_height = 3
 alignment = left
 stack_duplicates = true
@@ -29,27 +29,27 @@ progress_bar_frame_width = 1
 separator_height = 2
 ignore_dbusclose = false
 force_xwayland = false
-frame_color = "#857E70"
-highlight = "#907C5D"
-separator_color= "#AAADB5"
+frame_color = "#A7A2C9"
+highlight = "#E8C3B4"
+separator_color= "#ADADB2"
 
 [experimental]
 per_monitor_dpi = false
 
 [urgency_low]
 timeout = 2
-background = "#0B0C0Eee"
-foreground = "#AAADB5"
-frame_color = "#857E70"
+background = "#060609ee"
+foreground = "#ADADB2"
+frame_color = "#A7A2C9"
 
 [urgency_normal]
 timeout = 3
-background = "#0B0C0E80"
-foreground = "#AAADB5"
-frame_color = "#BC9C63"
+background = "#06060980"
+foreground = "#ADADB2"
+frame_color = "#D7DEB2"
 
 [urgency_critical]
 timeout = 4
-background = "#0B0C0Eee"
-foreground = "#AAADB5"
-frame_color = "#434B5B"
+background = "#060609ee"
+foreground = "#ADADB2"
+frame_color = "#4B4B54"

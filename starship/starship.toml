@@ -14,23 +14,23 @@ $rust\
 $golang\
 $docker_context\
 $line_break\
-$character"""
+$character
+"""
 
 add_newline = false
 
 # Directory configuration
 [directory]
 format = "[ $path ]($style)[$read_only]($read_only_style)"
-read_only = "󰌾"
-read_only_style = "fg:#503B45 bg:#375666"
+read_only = "󰌾 "
 truncation_length = 3
 fish_style_pwd_dir_length = 1
 home_symbol = "~"
 
 # Character at prompt
 [character]
-success_symbol = "[](bold green)"
-error_symbol = "[](bold purple)"
+success_symbol = "[\\$](bold green)"
+error_symbol = "[](bold purple)"
 
 # Username display
 [username]
@@ -62,7 +62,7 @@ symbol = " "
 symbol = " "
 
 [cmake]
-symbol = " "
+symbol = " "
 
 [conda]
 symbol = " "
@@ -82,9 +82,6 @@ symbol = " "
 [elm]
 symbol = " "
 
-[fennel]
-symbol = " "
-
 [fossil_branch]
 symbol = " "
 
@@ -92,7 +89,7 @@ symbol = " "
 symbol = " "
 
 [git_commit]
-tag_symbol = '  '
+tag_symbol = " "
 
 [golang]
 symbol = " "
@@ -102,9 +99,6 @@ symbol = " "
 
 [haskell]
 symbol = " "
-
-[haxe]
-symbol = " "
 
 [hg_branch]
 symbol = " "
@@ -121,9 +115,6 @@ symbol = " "
 [lua]
 symbol = " "
 
-[memory_usage]
-symbol = "󰍛 "
-
 [meson]
 symbol = "󰔷 "
 
@@ -134,57 +125,10 @@ symbol = "󰆥 "
 symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = "󰎙 "
 
 [ocaml]
 symbol = " "
-
-[os.symbols]
-Alpaquita = " "
-Alpine = " "
-AlmaLinux = " "
-Amazon = " "
-Android = " "
-Arch = " "
-Artix = " "
-CachyOS = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Kali = " "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-Nobara = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-RockyLinux = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Void = " "
-Windows = "󰍲 "
 
 [package]
 symbol = "󰏗 "
@@ -200,9 +144,6 @@ symbol = " "
 
 [python]
 symbol = " "
-
-[rlang]
-symbol = "󰟔 "
 
 [ruby]
 symbol = " "

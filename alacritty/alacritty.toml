@@ -11,10 +11,10 @@ opacity = 0.9
 decorations = "none"
 
 [font]
-size = 11.25
+size = 11
 
 [font.normal]
-family = "SFMono Nerd Font Mono"
+family = "Liga SFMono Nerd Font"
 
 [scrolling]
 multiplier = 6
