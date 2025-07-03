@@ -5,13 +5,13 @@
 # ~/.config/scripts/theme.sh
 # Description: Updates system theme components based on current wallpaper
 # Author: saatvik333
-# Version: 2.0
-# Dependencies: swww, wallust, hyprctl, waybar, dunst, hyprswitch
+# Version: 2.5
+# Dependencies: swww, wallust, hyprctl, waybar, dunst, hyprswitch, imagemagick
 #===============================================================================
 
 set -euo pipefail
 
-sleep 0.2  # Short delay to ensure script starts cleanly
+sleep 0.69  # Short delay to ensure script starts cleanly
 
 # --- Configuration ---
 readonly SCRIPT_NAME="${0##*/}"
@@ -22,10 +22,15 @@ readonly GTK_SCRIPT="${HOME}/.config/scripts/update-gtk-colors.sh"
 readonly WALLPAPER_CACHE="${HOME}/.config/waytrogen/wallpaper.txt"
 readonly LOG_FILE="${HOME}/.cache/${SCRIPT_NAME%.sh}.log"
 readonly LOCK_FILE="/tmp/${SCRIPT_NAME%.sh}.lock"
+readonly GIF_FRAME="${HOME}/.config/waytrogen/gif-frame.jpg"  # Temporary frame for GIFs
+
+# Global flags
+CLEANUP_GIF_FRAME=0
+SKIP_WAYBAR_DETECTION=0  # Default to running waybar detection
 
 # --- Logging Functions ---
 log() {
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE"
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOG_FILE" >&2
 }
 
 log_error() {
@@ -34,13 +39,19 @@ log_error() {
 
 log_debug() {
     if [[ ${DEBUG:-0} -eq 1 ]]; then
-        echo "[$(date '+%Y-%m-%d %H:%M:%S')] DEBUG: $*" | tee -a "$LOG_FILE"
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] DEBUG: $*" | tee -a "$LOG_FILE" >&2
     fi
 }
 
 # --- Utility Functions ---
 cleanup() {
     local exit_code=$?
+    # Clean up temporary GIF frame if needed
+    if [[ $CLEANUP_GIF_FRAME -eq 1 && -f "$GIF_FRAME" ]]; then
+        rm -f "$GIF_FRAME"
+        log "Removed temporary GIF frame: $GIF_FRAME"
+    fi
+
     [[ -f "$LOCK_FILE" ]] && rm -f "$LOCK_FILE"
     log "Script completed with exit code: $exit_code"
     exit $exit_code
@@ -108,33 +119,71 @@ create_directory() {
     fi
 }
 
+# --- GIF Handling Functions ---
+handle_gif_wallpaper() {
+    local gif_path="$1"
+    log "Handling GIF wallpaper: $gif_path"
+
+    # Create directory if needed
+    create_directory "$(dirname "$GIF_FRAME")" || return 1
+
+    # Extract first frame
+    if ! convert "$gif_path[0]" "$GIF_FRAME" &>/dev/null; then
+        log_error "Failed to extract first frame from GIF: $gif_path"
+        return 1
+    fi
+
+    if [[ ! -f "$GIF_FRAME" ]]; then
+        log_error "Extracted frame not found: $GIF_FRAME"
+        return 1
+    fi
+
+    log "Extracted first frame to: $GIF_FRAME"
+    CLEANUP_GIF_FRAME=1  # Set flag for cleanup
+    echo "$GIF_FRAME"
+}
+
 # --- Core Functions ---
 get_current_wallpaper() {
-    log_debug "Retrieving current wallpaper" >&2
+    log_debug "Retrieving current wallpaper"
 
     local wallpaper
     wallpaper=$(swww query 2>/dev/null | grep -oP '(?<=image: ).*' | head -n1 | tr -d '\n\r')
 
     if [[ -z "$wallpaper" ]]; then
-        log_error "No wallpaper detected from swww" >&2
+        log_error "No wallpaper detected from swww"
         return 1
     fi
 
     if [[ ! -f "$wallpaper" ]]; then
-        log_error "Wallpaper file does not exist: $wallpaper" >&2
+        log_error "Wallpaper file does not exist: $wallpaper"
         return 1
     fi
 
-    # Cache wallpaper path
-    create_directory "$(dirname "$WALLPAPER_CACHE")" >&2
+    # Cache original wallpaper path
+    create_directory "$(dirname "$WALLPAPER_CACHE")"
     echo "$wallpaper" > "$WALLPAPER_CACHE" || {
-        log_error "Failed to cache wallpaper path" >&2
+        log_error "Failed to cache wallpaper path"
         return 1
     }
 
-    log "Current wallpaper: $wallpaper" >&2
-    printf '%s' "$wallpaper"
+    # Handle GIF wallpapers
+    if [[ "$wallpaper" =~ \.(gif|GIF)$ ]]; then
+        if ! command -v convert &>/dev/null; then
+            log_error "ImageMagick required for GIF wallpapers but not installed"
+            return 1
+        fi
+        wallpaper=$(handle_gif_wallpaper "$wallpaper") || return 1
+        # Set flag to skip waybar wallpaper detection
+        SKIP_WAYBAR_DETECTION=1
+    else
+        SKIP_WAYBAR_DETECTION=0
+    fi
+
+    log "Using wallpaper for colors: $wallpaper"
+    echo "$wallpaper"  # Output to stdout only
 }
+
 
 update_hyprlock_config() {
     local wallpaper="$1"
@@ -188,22 +237,28 @@ execute_theme_scripts() {
 
     log_debug "Executing theme update scripts"
 
-    # Execute waybar wallpaper detection
-    if validate_file_executable "$WAYBAR_WALLPAPER_DETECTION" "Waybar wallpaper detection script"; then
-        log_debug "Executing waybar wallpaper detection"
-        if ! "$WAYBAR_WALLPAPER_DETECTION"; then
-            log_error "Waybar wallpaper detection script failed"
+    # Skip waybar wallpaper detection for GIFs
+    if [[ ${SKIP_WAYBAR_DETECTION:-0} -eq 0 ]]; then
+        if validate_file_executable "$WAYBAR_WALLPAPER_DETECTION" "Waybar wallpaper detection script"; then
+            log_debug "Executing waybar wallpaper detection"
+            # Pass the current wallpaper to the script
+            if ! "$WAYBAR_WALLPAPER_DETECTION" "$wallpaper"; then
+                log_error "Waybar wallpaper detection script failed"
+                return 1
+            fi
+            log "Waybar wallpaper detection completed"
+        else
             return 1
         fi
-        log "Waybar wallpaper detection completed"
     else
-        return 1
+        log "Skipping waybar wallpaper detection for GIF"
     fi
 
     # Execute GTK theme update
     if validate_file_executable "$GTK_SCRIPT" "GTK theme script"; then
         log_debug "Executing GTK theme update"
-        if ! "$GTK_SCRIPT"; then
+        # Pass the current wallpaper to GTK script
+        if ! "$GTK_SCRIPT" "$wallpaper"; then
             log_error "GTK theme script failed"
             return 1
         fi
@@ -365,18 +420,27 @@ main() {
     # Validate environment
     validate_dependencies || exit 1
 
-    # Get current wallpaper
+    # Get current wallpaper (might be GIF frame)
     local wallpaper
-    if ! wallpaper=$(get_current_wallpaper); then
-        exit 1
-    fi
+    wallpaper=$(get_current_wallpaper) || exit 1
+
+    # Get original wallpaper path from cache
+    local original_wallpaper
+    original_wallpaper=$(cat "$WALLPAPER_CACHE")
 
     # Execute theme update pipeline
-    update_hyprlock_config "$wallpaper" || exit 1
+    update_hyprlock_config "$original_wallpaper" || exit 1  # Use original path for hyprlock
     execute_theme_scripts "$wallpaper" || exit 1
     reload_system_components || exit 1
 
     log "Theme synchronization completed successfully"
+    notify-send \
+    --app-name="Theme Manager" \
+    --urgency="normal" \
+    --expire-time=4000 \
+    --hint="string:desktop-entry:theme-manager" \
+    "Theme synchronization completed successfully" \
+    "🎨 All components updated\n"
 }
 
 # --- Script Entry Point ---

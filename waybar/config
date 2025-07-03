@@ -5,7 +5,7 @@
   "margin": "8px 8px 0 8px",
   "modules-left": [
     "custom/arch",
-    "hyprland/workspaces",
+    "hyprland/workspaces"
   ],
   "modules-center": [
     "clock"
@@ -32,8 +32,7 @@
     "modules": [
       "custom/menu",
       "cpu",
-      "custom/updates",
-      "power-profiles-daemon"
+      "custom/updates"
     ]
   },
   "group/brightness": {
@@ -80,8 +79,8 @@
     }
   },
   "clock": {
-    "interval": 1,
-    "format": "{:%I:%M:%S %p}",
+    "interval": 60,
+    "format": "{:%I:%M %p}",
     "format-alt": "{:%a, %b %d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "on-click": "swaync-client -op"
@@ -124,23 +123,34 @@
     "format": "<span size='15pt' font='Material Icons'>menu_open</span>",
     "tooltip": false
   },
+  // Works but need to find a better solution
+  // "custom/updates": {
+  //   "format": "{} {icon}",
+  //   "return-type": "json",
+  //   "format-icons": {
+  //       "has-updates": "󱍷 ",
+  //       "updated": "󰕥 "
+  //   },
+  //   "exec-if": "which waybar-module-pacman-updates",
+  //   "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300 --no-zero-output"
+  // },
+  // "power-profiles-daemon": {
+  //   "format": "{icon}",
+  //   "tooltip": false,
+  //   "format-icons": {
+  //     "performance": "<span size='12pt' font='Material Icons'>local_fire_department</span>",
+  //     "balanced": "<span size='12pt' font='Material Icons'>balance</span>",
+  //     "power-saver": "<span size='12pt' font='Material Icons'>eco</span>"
+  //   }
+  // },
+
   "custom/updates": {
-    "format": "<span size='12pt' font='Material Icons'>system_update_alt</span>",
+    "format": "  {}",
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/scripts/check-package-updates.sh",
     "interval": 1800,
-    "signal": 8,
-    "on-click": "alacritty -e yay -Syu --noconfirm && yay -Yc --noconfirm && ~/.config/scripts/check-package-updates.sh"
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip": false,
-    "format-icons": {
-      "performance": "<span size='12pt' font='Material Icons'>local_fire_department</span>",
-      "balanced": "<span size='12pt' font='Material Icons'>balance</span>",
-      "power-saver": "<span size='12pt' font='Material Icons'>eco</span>"
-    }
+    "on-click": "yay -Syu --noconfirm"
   },
   "network": {
     "format-icons": {
@@ -211,7 +221,7 @@
     "tooltip": false
   },
   "backlight/slider": {
-    "min": 1,
+    "min": 5,
     "max": 100,
     "orientation": "horizontal",
     "device": "intel_backlight"
@@ -257,7 +267,7 @@
       "󰁹"
     ],
     "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
+    "format-plugged": "󰚥 {capacity}%",
     "format-plugordie": "󰂃 {capacity}",
     "tooltip": false,
     "exec-on-event": true,

@@ -1,12 +1,34 @@
 #!/bin/bash
 
+#===============================================================================
+# Check Package Updates Script
+# ~/.config/scripts/check-package-updates.sh
+# Description: Checks for available package updates using checkupdates-with-aur.
+# Author: saatvik333
+# Version: 1.2
+# Dependencies: checkupdates-with-aur, notify-send (optional)
+#===============================================================================
+
 # Prevent multiple instances
 script_name=$(basename "$0")
 lockfile="/tmp/${script_name}.lock"
 
+# Clean up lock file on exit
+trap 'rm -f "$lockfile"' EXIT
+
 # Use flock for better process control
 exec 200>"$lockfile"
 if ! flock -n 200; then
+    exit 1
+fi
+
+# Check if checkupdates-with-aur is available
+if ! command -v checkupdates-with-aur >/dev/null 2>&1; then
+    # Send desktop notification
+    if command -v notify-send >/dev/null 2>&1; then
+        notify-send "Waybar Update Checker" "checkupdates-with-aur not found. Install pacman-contrib or use an AUR helper." -u normal -i dialog-warning
+    fi
+    echo '{"tooltip": "checkupdates-with-aur not found - install pacman-contrib", "class": "transparent"}'
     exit 1
 fi
 
@@ -24,7 +46,7 @@ check_lock_files() {
 
     while [ -f "$pacman_lock" ] || [ -f "$checkup_lock" ]; do
         if [ $elapsed -ge $timeout ]; then
-            echo '{"tooltip": "Database locked - try again later", "class": "transparent"}' >&2
+            echo '{"tooltip": "Database locked - try again later", "class": "transparent"}'
             exit 1
         fi
         sleep 1
@@ -56,11 +78,5 @@ fi
 if [ "$updates" -gt 0 ]; then
     printf '{"text": "%s", "tooltip": "%s packages require updates", "class": "%s"}\n' "$updates" "$updates" "$css_class"
 else
-    printf '{"text": "", "tooltip": "No updates available", "class": "transparent"}\n'
+    printf '{"text": "0", "tooltip": "No updates available", "class": "transparent"}\n'
 fi
-
-# Signal Waybar to update
-pkill -SIGRTMIN+8 waybar 2>/dev/null
-
-# Release lock
-flock -u 200

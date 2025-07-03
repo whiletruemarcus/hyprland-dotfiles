@@ -9,7 +9,7 @@
 # It also manages GTK configuration files, symlinks for assets, and updates xsettingsd.
 # Author: saatvik333
 # Version: 2.0
-# Dependencies: sed gtk3 
+# Dependencies: sed gtk3
 #===============================================================================
 
 set -euo pipefail
