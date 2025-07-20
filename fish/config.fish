@@ -67,3 +67,5 @@ function extract
         echo "'$argv[1]' is not a valid file"
     end
 end
+
+string match -q "$TERM_PROGRAM" "kiro" and . (kiro --locate-shell-integration-path fish)

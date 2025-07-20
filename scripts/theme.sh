@@ -5,13 +5,13 @@
 # ~/.config/scripts/theme.sh
 # Description: Updates system theme components based on current wallpaper
 # Author: saatvik333
-# Version: 2.5
+# Version: 2.6
 # Dependencies: swww, wallust, hyprctl, waybar, dunst, hyprswitch, imagemagick
 #===============================================================================
 
 set -euo pipefail
 
-sleep 0.69  # Short delay to ensure script starts cleanly
+sleep 1  # Short delay to ensure script starts cleanly
 
 # --- Configuration ---
 readonly SCRIPT_NAME="${0##*/}"
@@ -25,7 +25,6 @@ readonly LOCK_FILE="/tmp/${SCRIPT_NAME%.sh}.lock"
 readonly GIF_FRAME="${HOME}/.config/waytrogen/gif-frame.jpg"  # Temporary frame for GIFs
 
 # Global flags
-CLEANUP_GIF_FRAME=0
 SKIP_WAYBAR_DETECTION=0  # Default to running waybar detection
 
 # --- Logging Functions ---
@@ -46,12 +45,6 @@ log_debug() {
 # --- Utility Functions ---
 cleanup() {
     local exit_code=$?
-    # Clean up temporary GIF frame if needed
-    if [[ $CLEANUP_GIF_FRAME -eq 1 && -f "$GIF_FRAME" ]]; then
-        rm -f "$GIF_FRAME"
-        log "Removed temporary GIF frame: $GIF_FRAME"
-    fi
-
     [[ -f "$LOCK_FILE" ]] && rm -f "$LOCK_FILE"
     log "Script completed with exit code: $exit_code"
     exit $exit_code
@@ -127,7 +120,7 @@ handle_gif_wallpaper() {
     # Create directory if needed
     create_directory "$(dirname "$GIF_FRAME")" || return 1
 
-    # Extract first frame
+    # Extract first frame (overwrite existing file)
     if ! convert "$gif_path[0]" "$GIF_FRAME" &>/dev/null; then
         log_error "Failed to extract first frame from GIF: $gif_path"
         return 1
@@ -139,7 +132,6 @@ handle_gif_wallpaper() {
     fi
 
     log "Extracted first frame to: $GIF_FRAME"
-    CLEANUP_GIF_FRAME=1  # Set flag for cleanup
     echo "$GIF_FRAME"
 }
 
@@ -314,16 +306,10 @@ reload_system_components() {
     fi
     log "Hyprland configuration reloaded"
 
-    # Reload waybar
-    if pgrep -x waybar >/dev/null; then
-        if ! killall -SIGUSR2 waybar 2>/dev/null; then
-            log_error "Failed to reload waybar"
-            return 1
-        fi
-        log "Waybar reloaded"
-    else
-        log_debug "Waybar not running, skipping reload"
-    fi
+    pkill waybar 2>/dev/null || true
+    sleep 0.5
+    waybar &>/dev/null &
+    log "Waybar reloaded"
 
     # Restart dunst
     if pgrep -x dunst >/dev/null; then
@@ -403,6 +389,13 @@ reload_system_components() {
         log_error "Hyprswitch command not found in PATH"
         return 1
     fi
+
+    if hyprpm reload 2>/dev/null; then
+        log "Hyprland plugins reloaded successfully"
+    else
+        log_error "Failed to reload Hyprland plugins"
+        return 1
+    fi
 }
 
 # --- Main Execution ---
@@ -428,8 +421,18 @@ main() {
     local original_wallpaper
     original_wallpaper=$(cat "$WALLPAPER_CACHE")
 
+    # Determine which wallpaper to use for hyprlock
+    local hyprlock_wallpaper
+    if [[ "$original_wallpaper" =~ \.(gif|GIF)$ ]]; then
+        # Use the extracted frame for GIFs
+        hyprlock_wallpaper="$GIF_FRAME"
+    else
+        # Use original for static images
+        hyprlock_wallpaper="$original_wallpaper"
+    fi
+
     # Execute theme update pipeline
-    update_hyprlock_config "$original_wallpaper" || exit 1  # Use original path for hyprlock
+    update_hyprlock_config "$hyprlock_wallpaper" || exit 1
     execute_theme_scripts "$wallpaper" || exit 1
     reload_system_components || exit 1
 

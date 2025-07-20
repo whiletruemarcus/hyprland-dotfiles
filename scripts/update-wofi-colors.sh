@@ -8,7 +8,7 @@
 # It also manages GTK configuration files, symlinks for assets, and updates xsettingsd.
 # Author: saatvik333
 # Version: 2.0
-# Dependencies: sed grep 
+# Dependencies: sed grep
 #===============================================================================
 
 # Make sure the config directory exists
@@ -98,7 +98,7 @@ window {
     margin: 5px;
     border-radius: 8px;
     background-color: rgba($BG_RGB, 0.9);
-    font-family: "SFMono Nerd Font Mono", monospace;
+    font-family: "Liga SFMono Nerd Font", monospace;
 }
 
 #input {
