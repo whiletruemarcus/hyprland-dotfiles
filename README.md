@@ -16,7 +16,7 @@ A modern, Rust-powered Hyprland 🍚 with a focus on automation, aesthetics, and
   Consistent, visually appealing icons for Waybar, enhancing both symmetry and aesthetics.
 
 - **Universal Environment Variables**
-  Effortlessly supports `zsh`, `fish`, and `bash` for a unified shell experience.
+  Effortlessly supports `zsh` and `bash` for a unified shell experience, manual intervention required for fish though.
 
 - **Wallust Palette Integration with Templates**
   Leverage a fast, powerful palette generator for beautiful, cohesive color schemes.

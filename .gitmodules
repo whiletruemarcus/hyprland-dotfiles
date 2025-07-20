@@ -7,3 +7,6 @@
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "sddm"]
+	path = sddm
+	url = https://github.com/saatvik333/obscure-sddm-theme

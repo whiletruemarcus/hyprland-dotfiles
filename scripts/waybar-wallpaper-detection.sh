@@ -40,21 +40,31 @@ read -r R G B <<< "$RGB_VALUES"
 # Calculate relative luminance
 LUMINANCE=$(echo "scale=0; ($R * 299 + $G * 587 + $B * 114) / 1000" | bc)
 
-# Check if light (threshold 128)
+# Check if light (threshold 80)
 if (( $(echo "$LUMINANCE > 80" | bc -l) )); then
-    # Light background - swap colors
+    # Light background - swap colors and use dark backgrounds
     sed -i.bak \
         -e 's/@define-color background {{background}};/@define-color background {{foreground}};/' \
         -e 's/@define-color foreground {{foreground}};/@define-color foreground {{background}};/' \
         ~/.config/wallust/templates/waybar.css
 
-    echo "RGB: $R $G $B, Luminance: $LUMINANCE"
+    # Change white transparent backgrounds to black transparent backgrounds for light wallpapers
+    sed -i \
+        -e 's/background: rgba(255, 255, 255, 0\.1)/background: rgba(0, 0, 0, 0.1)/g' \
+        /home/saatvik333/.config/waybar/style.css
+
+    echo "RGB: $R $G $B, Luminance: $LUMINANCE (Light wallpaper - using dark backgrounds)"
 else
-    # Dark background - restore original
+    # Dark background - restore original colors and use white backgrounds
     sed -i.bak \
         -e 's/@define-color background {{foreground}};/@define-color background {{background}};/' \
         -e 's/@define-color foreground {{background}};/@define-color foreground {{foreground}};/' \
         ~/.config/wallust/templates/waybar.css
 
-    echo "RGB: $R $G $B, Luminance: $LUMINANCE"
+    # Change black transparent backgrounds back to white transparent backgrounds for dark wallpapers
+    sed -i \
+        -e 's/background: rgba(0, 0, 0, 0\.1)/background: rgba(255, 255, 255, 0.1)/g' \
+        /home/saatvik333/.config/waybar/style.css
+
+    echo "RGB: $R $G $B, Luminance: $LUMINANCE (Dark wallpaper - using white backgrounds)"
 fi

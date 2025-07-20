@@ -8,7 +8,8 @@
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "clock"
+    "clock",
+    "mpris"
   ],
   "modules-right": [
     "tray",
@@ -60,10 +61,9 @@
     ]
   },
   "custom/arch": {
-    "format": "󰣇",
-    "tooltip": true,
-    "tooltip-format": "btw",
-    "on-click": "alacritty -e zsh -c 'fastfetch; exec zsh'",
+    "format": "󰣇  btw",
+    "tooltip": false,
+    "on-click": "alacritty",
     "on-click-right": ""
   },
   "hyprland/workspaces": {
@@ -84,6 +84,30 @@
     "format-alt": "{:%a, %b %d}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "on-click": "swaync-client -op"
+  },
+  "mpris": {
+    "format": "{player_icon} {status_icon}",
+    "format-paused": "{player_icon} {status_icon}",
+    "status-icons": {
+      "playing": "󰐊",
+      "paused": "󰏤",
+      "stopped": "󰓛"
+    },
+    "player-icons": {
+      "default": "󱜏",
+      "spotify_player": "",
+      "spotify": "",
+      "firefox": "󰺕",
+      "chrome": "",
+      "vlc": "󰕼"
+      },
+    "max-length": 30,
+    "return-type": "json",
+    "interval": 1,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "tooltip": false
   },
   "tray": {
     "icon-size": 14,
@@ -123,17 +147,6 @@
     "format": "<span size='15pt' font='Material Icons'>menu_open</span>",
     "tooltip": false
   },
-  // Works but need to find a better solution
-  // "custom/updates": {
-  //   "format": "{} {icon}",
-  //   "return-type": "json",
-  //   "format-icons": {
-  //       "has-updates": "󱍷 ",
-  //       "updated": "󰕥 "
-  //   },
-  //   "exec-if": "which waybar-module-pacman-updates",
-  //   "exec": "waybar-module-pacman-updates --interval-seconds 5 --network-interval-seconds 300 --no-zero-output"
-  // },
   // "power-profiles-daemon": {
   //   "format": "{icon}",
   //   "tooltip": false,
@@ -161,8 +174,8 @@
         "<span size='12pt' font='Material Icons'>signal_wifi_4_bar</span>"
       ],
       "ethernet": "<span size='12pt' font='Material Icons'>lan</span>",
-      "disconnected": "<span size='12pt' font='Material Icons'>signal_wifi_off</span>",
-      "disabled": "<span size='12pt' font='Material Icons'>signal_wifi_bad</span>"
+      "disabled": "<span size='12pt' font='Material Icons'>signal_wifi_off</span>",
+      "disconnected": "<span size='12pt' font='Material Icons'>signal_wifi_bad</span>"
     },
     "format-wifi": "{icon}",
     "format-ethernet": "{icon} Wired",

@@ -109,6 +109,30 @@ window#waybar {
     font-weight: 500;
 }
 
+
+#mpris {
+    color: @foreground;
+    padding: 0 12px;
+    margin: 0 4px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#mpris.playing {
+    color: #8ec07c;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#mpris.paused {
+    color: #d79921;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#mpris.stopped {
+    color: #cc241d;
+    background: rgba(255, 255, 255, 0.1);
+}
+
 #custom-monitors {
     color: @foreground;
     background: rgba(255, 255, 255, 0.1);
@@ -241,7 +265,7 @@ tooltip class {
     border-radius: 8px;
 }
 
-#network.disconnected {
+#network.disabled {
     color: #cc241d;
     /* border: solid 2px #cc241d; */
     background: rgba(255, 0, 0, 0.1);
