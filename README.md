@@ -25,7 +25,6 @@ A modern, Rust-powered Hyprland 🍚 with a focus on automation, aesthetics, and
 
 ## 🚧 Roadmap
 
-- [ ] Transition from `hyprswitch` to the enhanced and rebranded `hyprshell`
 - [ ] Switch notification daemon from `dunst` to `swaync`
 - [ ] Expand and refine GTK theme support with more theme
 - [ ] Additional improvements and features coming soon!
