@@ -161,9 +161,9 @@
     "format": "  {}",
     "escape": true,
     "return-type": "json",
-    "exec": "~/.config/scripts/check-package-updates.sh",
+    "exec": "~/.config/scripts/system/package-updates.sh",
     "interval": 1800,
-    "on-click": "yay -Syu --noconfirm"
+    "on-click": "alacritty -e yay -Syu --noconfirm"
   },
   "network": {
     "format-icons": {
