@@ -25,6 +25,7 @@ obs-studio/
 LosslessCut/
 inkscape/
 obsidian/
+spotify-player/
 
 # System & Utilities
 nwg-look/
@@ -42,6 +43,7 @@ celluloid/
 s-tui/
 Thunar/
 waytrogen/
+qview/
 
 # Desktop Environment & Frameworks
 kde.org/
