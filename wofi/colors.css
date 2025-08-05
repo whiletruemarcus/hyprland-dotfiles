@@ -4,28 +4,28 @@ css = { src = "wofi.css", dst = "~/.config/wofi/colors.css" }
  */
 
 :root {
-    --wallpaper: url("/home/saatvik333/Pictures/Wallpapers/Catppuccin/catppuccin-train-sideview.png");
+    --wallpaper: url("/home/saatvik333/Pictures/Wallpapers/Nord/nord-kurzgesagt-blackhole.png");
 
     /* Special */
-    --background: #0B0C10;
-    --foreground: #B3B3B9;
-    --cursor: #C0BEC7;
+    --background: #0E0F13;
+    --foreground: #B6B8BC;
+    --cursor: #C2BAC7;
 
     /* Colors */
-    --color0:  #494741;
-    --color1:  #575864;
-    --color2:  #80798B;
-    --color3:  #97BDA8;
-    --color4:  #F5B09D;
-    --color5:  #CCC9D4;
-    --color6:  #F0E2BD;
-    --color7:  #8A8B93;
-    --color8:  #616167;
-    --color9:  #575864;
-    --color10: #80798B;
-    --color11: #97BDA8;
-    --color12: #F5B09D;
-    --color13: #CCC9D4;
-    --color14: #F0E2BD;
-    --color15: #8A8B93;
+    --color0:  #3E3931;
+    --color1:  #5D626B;
+    --color2:  #A26D77;
+    --color3:  #677AB5;
+    --color4:  #8AC3CF;
+    --color5:  #CEBDD2;
+    --color6:  #E9CF9D;
+    --color7:  #8E9197;
+    --color8:  #63666A;
+    --color9:  #5D626B;
+    --color10: #A26D77;
+    --color11: #677AB5;
+    --color12: #8AC3CF;
+    --color13: #CEBDD2;
+    --color14: #E9CF9D;
+    --color15: #8E9197;
 }

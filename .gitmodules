@@ -1,5 +1,5 @@
 [submodule "themes/Colloid-gtk-theme"]
-	path = themes/Colloid-gtk-theme
+	path = themes/gtk/Colloid-gtk-theme
 	url = https://github.com/vinceliuice/Colloid-gtk-theme
 [submodule "zsh/plugins/fast-syntax-highlighting"]
 	path = zsh/plugins/fast-syntax-highlighting
@@ -7,6 +7,6 @@
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "sddm"]
-	path = sddm
+[submodule "/home/saatvik333/.config/themes/sddm/obscure"]
+	path = /home/saatvik333/.config/themes/sddm/obscure
 	url = https://github.com/saatvik333/obscure-sddm-theme

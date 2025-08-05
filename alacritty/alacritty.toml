@@ -11,8 +11,9 @@ opacity = 0.9
 decorations = "none"
 
 [font]
-size = 11
+size = 12
 
+# NOTE: alacritty doesn't support ligatures, just using this since it's my preferred font with nerdfonts.
 [font.normal]
 family = "Liga SFMono Nerd Font"
 

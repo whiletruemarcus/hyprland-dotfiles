@@ -30,7 +30,8 @@ home_symbol = "~"
 # Character at prompt
 [character]
 success_symbol = "[\\$](bold green)"
-error_symbol = "[](bold purple)"
+error_symbol = "[](bold red)"
+vimcmd_symbol ="[](bold green)"
 
 # Username display
 [username]

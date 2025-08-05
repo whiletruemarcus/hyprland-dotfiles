@@ -1,0 +1,28 @@
+                              $4...
+           $2s,                $4.                    $2.s
+            $2ss,              $4. ..               $2.ss
+            $2'SsSs,           $4..  .           $2.sSsS'
+             $2sSs'sSs,        $4.   .        $2.sSs'sSs
+              $2sSs  'sSs,      $4...      $2.sSs'  sSs
+               $2sS,    'sSs,         $2.sSs'    .Ss
+               $2'Ss       'sSs,   $2.sSs'       sS'
+      $4...       $2sSs         ' $2.sSs'         sSs       $4...
+     $4.           $2sSs       $2.sSs' $2sS$2,       sSs       $4.
+     $4. ..         $2sS,   $2.sSs'     $2'sSs,   .Ss        $4. ..
+     $4..  .        $2'Ss $2.Ss'     $4.     $2'sSs.'s'        $4..  .
+     $4.   .         $2sSs '       $4.        $2'sSs,        $4.   .
+      $4...      $2.sS.'sSs        $4.        $2'Ss $2'sSs,     $4...
+            $2.sSs'    sS,     $4. . .     $2.Ss    'sSs,
+         $2.sSs'       'Ss       $4.       $2sS'       'sSs,
+      $2.sSs'           sSs             $2sSs           'sSs,
+   $2.sSs'               sS,           $2sSs               $2'sSs,
+$2.s$2sSsSsSsSsSsSsSsSsSsSsSsSsSsSsSsSsS'sS'sSssSssSssSssSssSssSs$2s.
+                        $2sSs         $2sS'
+                         $2sSs       sSs
+                          $2sSs     sSs       $5- saatvik333
+                           $2sS,   .Ss
+                           $2'Ss   sS'
+                            $2sSs sSs
+                             $2sSsSs
+                              $2sSs
+                               $2s

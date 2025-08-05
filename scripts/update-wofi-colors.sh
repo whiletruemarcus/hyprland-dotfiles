@@ -18,43 +18,43 @@ COLORS_FILE="$HOME/.config/wofi/colors.css"
 
 # Function to extract color value from CSS variable
 extract_color() {
-    local var_name="$1"
-    grep -o "^[[:space:]]*--${var_name}:[[:space:]]*#[0-9a-fA-F]\{6\}" "$COLORS_FILE" | \
+  local var_name="$1"
+  grep -o "^[[:space:]]*--${var_name}:[[:space:]]*#[0-9a-fA-F]\{6\}" "$COLORS_FILE" |
     sed -E 's/^[[:space:]]*--[^:]+:[[:space:]]*#([0-9a-fA-F]{6}).*/\1/'
 }
 
 # Function to convert hex to RGB values
 hex_to_rgb() {
-    local hex="$1"
-    local r=$((0x${hex:0:2}))
-    local g=$((0x${hex:2:2}))
-    local b=$((0x${hex:4:2}))
-    echo "$r,$g,$b"
+  local hex="$1"
+  local r=$((0x${hex:0:2}))
+  local g=$((0x${hex:2:2}))
+  local b=$((0x${hex:4:2}))
+  echo "$r,$g,$b"
 }
 
 # Function to lighten a color
 lighten_hex() {
-    local hex="$1"
-    local percent="$2"
-    local r=$((0x${hex:0:2}))
-    local g=$((0x${hex:2:2}))
-    local b=$((0x${hex:4:2}))
+  local hex="$1"
+  local percent="$2"
+  local r=$((0x${hex:0:2}))
+  local g=$((0x${hex:2:2}))
+  local b=$((0x${hex:4:2}))
 
-    r=$(( r + (255 - r) * percent / 100 ))
-    g=$(( g + (255 - g) * percent / 100 ))
-    b=$(( b + (255 - b) * percent / 100 ))
+  r=$((r + (255 - r) * percent / 100))
+  g=$((g + (255 - g) * percent / 100))
+  b=$((b + (255 - b) * percent / 100))
 
-    r=$(( r > 255 ? 255 : r ))
-    g=$(( g > 255 ? 255 : g ))
-    b=$(( b > 255 ? 255 : b ))
+  r=$((r > 255 ? 255 : r))
+  g=$((g > 255 ? 255 : g))
+  b=$((b > 255 ? 255 : b))
 
-    printf "%02x%02x%02x" "$r" "$g" "$b"
+  printf "%02x%02x%02x" "$r" "$g" "$b"
 }
 
 # Extract colors from CSS file
 if [[ ! -f "$COLORS_FILE" ]]; then
-    echo "Error: Colors file not found at $COLORS_FILE"
-    exit 1
+  echo "Error: Colors file not found at $COLORS_FILE"
+  exit 1
 fi
 
 # Extract all required colors
@@ -91,7 +91,7 @@ echo "Accent: #$ACCENT"
 echo "Selection: #$SELECTION -> rgba($SELECTION_RGB)"
 
 # Create wofi style.css
-cat > ~/.config/wofi/style.css << EOL
+cat >~/.config/wofi/style.css <<EOL
 /* ~/.config/wofi/style.css - Auto-generated from colors.css */
 
 window {
