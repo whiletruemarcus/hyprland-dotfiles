@@ -1,99 +1,180 @@
-# Git Maintenance Scripts
+# System Scripts Collection
 
-This directory contains scripts to help maintain your git repository and .gitignore file.
+A modular collection of scripts for system theme management, media control, and maintenance tasks.
 
-## Scripts
+## 📁 Directory Structure
 
-### 🧹 `git-cleanup.sh`
+```
+scripts/
+├── lib/                    # Shared utility libraries
+│   ├── common.sh          # Common functions (logging, file ops, notifications)
+│   └── color-utils.sh     # Color processing and image analysis
+├── theme/                 # Theme management scripts
+│   ├── theme-sync.sh      # Master theme synchronization script
+│   ├── waybar-detection.sh # Waybar theme adjustment based on wallpaper
+│   ├── gtk-colors.sh      # GTK theme updates
+│   └── wofi-colors.sh     # Wofi color scheme updates
+├── media/                 # Media and system control
+│   ├── music-status.sh    # Music player status display
+│   └── volume-brightness.sh # Volume, brightness, and media controls
+├── git/                   # Git repository utilities
+│   ├── cleanup.sh         # Remove ignored files from git tracking
+│   └── validate-gitignore.sh # Validate .gitignore effectiveness
+└── system/                # System utilities
+    └── package-updates.sh # Package update checker for Waybar
+```
+
+## 🎨 Theme Management
+
+### `theme/theme-sync.sh` - Master Theme Controller
+**Purpose**: Orchestrates system-wide theme updates based on current wallpaper
+
+**Usage**:
+```bash
+./scripts/theme/theme-sync.sh
+```
+
+**Features**:
+- Detects current wallpaper from swww
+- Handles GIF wallpapers (extracts first frame)
+- Updates hyprlock, waybar, GTK, and wofi themes
+- Reloads system components (waybar, dunst, hyprswitch)
+- Sends completion notifications
+
+### `theme/waybar-detection.sh` - Waybar Theme Adjuster
+**Purpose**: Adjusts waybar colors based on wallpaper luminosity
+
+**Usage**:
+```bash
+./scripts/theme/waybar-detection.sh <wallpaper_path>
+```
+
+### `theme/gtk-colors.sh` - GTK Theme Manager
+**Purpose**: Updates GTK themes based on wallpaper folder structure
+
+### `theme/wofi-colors.sh` - Wofi Color Updater
+**Purpose**: Generates wofi CSS from wallust color palette
+
+## 🎵 Media Control
+
+### `media/volume-brightness.sh` - System Controls
+**Purpose**: Unified volume, brightness, and media playback control
+
+**Usage**:
+```bash
+./scripts/media/volume-brightness.sh {volume_up|volume_down|volume_mute|mic_mute|brightness_up|brightness_down|next_track|prev_track|play_pause}
+```
+
+### `media/music-status.sh` - Music Display
+**Purpose**: Shows current music status for widgets and lock screen
+
+## 🔧 System Utilities
+
+### `system/package-updates.sh` - Update Checker
+**Purpose**: Checks for available package updates (Waybar integration)
+
+**Usage**:
+```bash
+./scripts/system/package-updates.sh
+```
+
+**Output**: JSON format for Waybar consumption
+
+## 📦 Git Utilities
+
+### `git/cleanup.sh` - Repository Cleanup
 **Purpose**: Remove files from git tracking that should be ignored according to .gitignore
 
 **Usage**:
 ```bash
-./scripts/git-cleanup.sh
+./scripts/git/cleanup.sh
 ```
 
-**What it does**:
+**Features**:
 - Scans for files currently tracked in git that match .gitignore patterns
 - Shows you a list of files that will be removed from tracking
 - Asks for confirmation before making changes
 - Removes files from git tracking (files remain on disk)
-- Shows you the staged changes ready to commit
+- Shows staged changes ready to commit
 
-**Example output**:
-```
-🧹 Git Repository Cleanup Script
-=================================
-[INFO] Checking for files that should be ignored...
-
-[WARNING] Found the following tracked files that should be ignored:
-  - gtk-3.0/colors.css
-  - gtk-4.0/settings.ini
-
-Do you want to remove these files from git tracking? (y/N): y
-```
-
-### 🔍 `validate-gitignore.sh`
+### `git/validate-gitignore.sh` - GitIgnore Validator
 **Purpose**: Validate and analyze your .gitignore file effectiveness
 
 **Usage**:
 ```bash
-./scripts/validate-gitignore.sh
+./scripts/git/validate-gitignore.sh
 ```
 
-**What it checks**:
+**Features**:
 - Files currently tracked that should be ignored
 - Common ignore patterns that might be missing
 - Large files that might need to be ignored
 - Potentially sensitive files
 - .gitignore statistics
 
-**Example output**:
-```
-🔍 GitIgnore Validation Script
-==============================
-[INFO] Validating .gitignore patterns...
-[SUCCESS] No tracked files found that should be ignored.
-[WARNING] Consider adding these common patterns to .gitignore:
-  - *.pyc
-```
+## 📚 Libraries
 
-## Common Workflow
+### `lib/common.sh` - Shared Utilities
+- Logging functions (info, error, success, warn, debug)
+- File system operations
+- Process management (locking)
+- Dependency validation
+- Notification helpers
 
-1. **After adding new patterns to .gitignore**:
+### `lib/color-utils.sh` - Color Processing
+- Hex to RGB conversion
+- Color lightening/darkening
+- Luminance calculation
+- CSS color extraction
+- Image analysis functions
+- GIF frame extraction
+
+## 🚀 Quick Start
+
+1. **Theme synchronization** (run after wallpaper changes):
    ```bash
-   # Add patterns to .gitignore
-   echo "new-directory/" >> .gitignore
-   
-   # Clean up tracked files that should now be ignored
-   ./scripts/git-cleanup.sh
-   
-   # Commit the changes
-   git add .gitignore
-   git commit -m "Add new-directory/ to .gitignore and remove from tracking"
+   ./scripts/theme/theme-sync.sh
    ```
 
-2. **Regular maintenance**:
+2. **Volume control** (bind to media keys):
    ```bash
-   # Check if your .gitignore is working well
-   ./scripts/validate-gitignore.sh
-   
-   # Clean up any issues found
-   ./scripts/git-cleanup.sh
+   ./scripts/media/volume-brightness.sh volume_up
    ```
 
-## Technical Details
+3. **Music status** (for widgets):
+   ```bash
+   ./scripts/media/music-status.sh
+   ```
 
-### Why the fix was needed
-The original script used `git ls-files -i --exclude-standard` which requires either `-o` (show untracked files) or `-c` (show cached/tracked files). Since we want to find tracked files that should be ignored, we use `-ci` (cached + ignored).
+## 🔧 Configuration
 
-### Commands used
-- `git ls-files -ci --exclude-standard` - List tracked files that match .gitignore patterns
-- `git rm --cached <file>` - Remove file from git tracking but keep on disk
-- `git check-ignore <file>` - Check if a file would be ignored
+All scripts follow consistent patterns:
+- **Notifications**: Important updates send desktop notifications
+- **Logging**: Comprehensive logging with timestamps
+- **Error handling**: Robust error checking and recovery
+- **Modularity**: Shared code in libraries, focused script responsibilities
 
-## Safety Features
+## 📋 Dependencies
 
-- **Confirmation prompts**: Scripts ask before making changes
-- **Dry-run capability**: Shows what will be changed before doing it
-- **Non-destructive**: Files are only removed from git tracking, not deleted from disk
-- **Error handling**: Scripts handle edge cases and provide helpful error messages
+- **Core**: bash, notify-send
+- **Theme**: swww, wallust, hyprctl, gsettings
+- **Media**: pactl, brightnessctl, playerctl
+- **Image**: imagemagick (for GIF support)
+- **System**: checkupdates-with-aur (for package updates)
+
+## 🔄 Migration from Old Structure
+
+The scripts have been reorganized for better maintainability:
+
+**Old → New Mapping**:
+- `check-package-updates.sh` → `system/package-updates.sh`
+- `music-status.sh` → `media/music-status.sh`
+- `volume-brightness.sh` → `media/volume-brightness.sh`
+- `waybar-wallpaper-detection.sh` → `theme/waybar-detection.sh`
+- `update-gtk-colors.sh` → `theme/gtk-colors.sh`
+- `update-wofi-colors.sh` → `theme/wofi-colors.sh`
+- `theme.sh` → `theme/theme-sync.sh`
+- `git-cleanup.sh` → `git/cleanup.sh`
+- `validate-gitignore.sh` → `git/validate-gitignore.sh`
+
+Update your keybindings and automation scripts to use the new paths.
