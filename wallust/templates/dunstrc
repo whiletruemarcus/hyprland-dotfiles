@@ -48,7 +48,7 @@ idle_threshold = 120
 icon_position = left
 min_icon_size = 16
 max_icon_size = 64
-icon_path = /usr/share/icons/Papirus-Dark/24x24/apps/:/home/saatvik333/.icons/
+icon_path = /usr/share/icons/Papirus-Dark/24x24/apps/:/home/marcus/.icons/
 
 # Progress bar
 progress_bar = true
