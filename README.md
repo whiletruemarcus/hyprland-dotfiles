@@ -1,9 +1,12 @@
 # Hyprland Configuration
 
 A comprehensive, modern, rust-powered Hyprland 🍚 with a focus on featuring automated theme management, dynamic wallpaper integration, and seamless workflow optimization.
+
 ## Overview
 
 This configuration provides a complete desktop environment built around Hyprland with intelligent automation systems. The setup includes dynamic theme synchronization across all applications, animated wallpaper support, and a modular script architecture for system management.
+
+https://github.com/user-attachments/assets/d348e384-ef6b-4c0d-9aef-bea7f89104bc
 
 ## Key Features
 
